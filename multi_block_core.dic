@@ -242,3 +242,14 @@ save_exptl_crystal.id
     _type.contents                Word
 
 save_
+
+save_
+
+    loop_
+      _dictionary_audit.version
+      _dictionary_audit.date
+      _dictionary_audit.revision
+         0.1.0                    2023-09-15
+;
+       All multi-block items from core 3.2.0 added
+;
