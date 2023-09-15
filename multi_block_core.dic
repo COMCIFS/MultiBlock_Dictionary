@@ -70,24 +70,6 @@ save_DIFFRN
 
 save_
 
-save_diffrn.id
-
-    _definition.id                '_diffrn.id'
-    _definition.update            2022-05-09
-    _description.text
-;
-    Unique identifier for a diffraction data set collected under
-    particular diffraction conditions.
-;
-    _name.category_id             diffrn
-    _name.object_id               id
-    _type.purpose                 Key
-    _type.source                  Assigned
-    _type.container               Single
-    _type.contents                Word
-
-save_
-
 save_diffrn.crystal_id
 
     _definition.id                '_diffrn.crystal_id'
@@ -101,6 +83,24 @@ save_diffrn.crystal_id
     _name.object_id               crystal_id
     _name.linked_item_id          '_exptl_crystal.id'
     _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
+save_diffrn.id
+
+    _definition.id                '_diffrn.id'
+    _definition.update            2022-05-09
+    _description.text
+;
+    Unique identifier for a diffraction data set collected under
+    particular diffraction conditions.
+;
+    _name.category_id             diffrn
+    _name.object_id               id
+    _type.purpose                 Key
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Word
@@ -240,8 +240,6 @@ save_exptl_crystal.id
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Word
-
-save_
 
 save_
 
