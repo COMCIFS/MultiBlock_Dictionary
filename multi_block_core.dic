@@ -1,0 +1,55 @@
+#\#CIF_2.0
+##########################################################################
+#                                                                        #
+#  MULTIBLOCK CIF CORE DICTIONARY                                        #
+#                                                                        #
+##########################################################################
+
+data_MULTIBLOCK_DIC
+
+    _dictionary.title             MULTIBLOCK_DIC
+    _dictionary.class             Instance
+    _dictionary.version           0.1.0
+    _dictionary.date              2023-09-15
+    _dictionary.uri
+        https://raw.githubusercontent.com/COMCIFS/MultiBlock_Dictionary/main/multi_block_core.dic
+    _dictionary.ddl_conformance   4.2.0
+    _dictionary.namespace         CifCore
+    _description.text
+;
+    The multi block dictionary adds data names to the core dictionary which
+    allow description of data spread over multiple data units (blocks).
+
+    Under the default schema, all data names in Set categories must be
+    single-valued in any given data block. If these Set categories are
+    provided with one or more key data names, information in these
+    categories spread over multiple data blocks can be combined
+    together.
+
+    When key data names are specified, all child data names in other
+    categories should be specified at the same time, as well as data
+    names that reference items in the given Set category.
+
+    This dictionary redefines Set categories to include the new
+    key data names, adds the key data name definitions, and defines
+    any linked and child data names.
+;
+
+save_MULTIBLOCK_CORE
+
+    _definition.id                MULTIBLOCK_CORE
+    _definition.scope             Category
+    _definition.class             Head
+    _definition.update            2023-09-15
+    _description.text
+;
+    The MULTIBLOCK_CORE category becomes the overarching category
+    for all core data names used in one or more data units.
+;
+    _name.category_id             MULTIBLOCK_DIC
+    _name.object_id               MULTIBLOCK_CORE
+
+    _import.get
+        [{'dupl':Ignore  'file':cif_core.dic  'mode':Full  'save':CIF_CORE}]
+
+save_
