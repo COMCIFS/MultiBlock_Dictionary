@@ -1003,6 +1003,41 @@ save_audit.id
 
 save_
 
+save_COMPUTING
+
+    _definition.id                COMPUTING
+    _definition.scope             Category
+    _definition.class             Set
+    _definition.update            2023-10-15
+    _description.text
+;
+    The CATEGORY of data items used to record details of the
+    computer programs used in the crystal structure analysis.
+;
+    _name.category_id             PUBLICATION
+    _name.object_id               COMPUTING
+    _category_key.name            '_computing.id'
+
+save_
+
+save_computing.id
+
+    _definition.id                '_computing.id'
+    _definition.update            2023-10-15
+    _description.text
+;
+    Unique identifier for details of the computer programs used in the crystal
+    structure analysis.
+;
+    _name.category_id             computing
+    _name.object_id               id
+    _type.purpose                 Key
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
     loop_
       _dictionary_audit.version
       _dictionary_audit.date
