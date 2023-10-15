@@ -1140,6 +1140,42 @@ save_display.id
 
 save_
 
+save_JOURNAL
+
+    _definition.id                JOURNAL
+    _definition.scope             Category
+    _definition.class             Set
+    _definition.update            2023-10-15
+    _description.text
+;
+    Category of items recording details about the book-keeping
+    by the journal staff when processing a CIF submitted for
+    publication.  The creator of a CIF will not normally specify
+    these data items.
+;
+    _name.category_id             PUBLICATION
+    _name.object_id               JOURNAL
+    _category_key.name            '_journal.id'
+
+save_
+
+save_journal.id
+
+    _definition.id                '_journal.id'
+    _definition.update            2023-10-15
+    _description.text
+;
+    Unique identifier for journal staff book-keeping.
+;
+    _name.category_id             journal
+    _name.object_id               id
+    _type.purpose                 Key
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
     loop_
       _dictionary_audit.version
       _dictionary_audit.date
