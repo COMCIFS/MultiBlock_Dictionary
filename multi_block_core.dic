@@ -711,6 +711,41 @@ save_chemical_formula.id
 
 save_
 
+save_EXPTL_ABSORPT
+
+    _definition.id                EXPTL_ABSORPT
+    _definition.scope             Category
+    _definition.class             Set
+    _definition.update            2023-10-15
+    _description.text
+;
+    The CATEGORY of data items used to specify the experimental details
+    of the absorption measurements and corrections to the diffraction data.
+;
+    _name.category_id             EXPTL
+    _name.object_id               EXPTL_ABSORPT
+    _category_key.name            '_exptl_absorpt.id'
+
+save_
+
+save_exptl_absorpt.id
+
+    _definition.id                '_exptl_absorpt.id'
+    _definition.update            2023-10-15
+    _description.text
+;
+    Unique identifier for the experimental details of the absorption
+    measurements and corrections to the diffraction data.
+;
+    _name.category_id             exptl_absorpt
+    _name.object_id               id
+    _type.purpose                 Key
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
 save_EXPTL_CRYSTAL
 
     _definition.id                EXPTL_CRYSTAL
@@ -738,6 +773,40 @@ save_exptl_crystal.id
     Code identifying a crystal.
 ;
     _name.category_id             exptl_crystal
+    _name.object_id               id
+    _type.purpose                 Key
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
+save_EXPTL_CRYSTAL_APPEARANCE
+
+    _definition.id                EXPTL_CRYSTAL_APPEARANCE
+    _definition.scope             Category
+    _definition.class             Set
+    _definition.update            2023-10-15
+    _description.text
+;
+    The CATEGORY of ENUMERATION items used to specify information about the
+    crystal colour and appearance.
+;
+    _name.category_id             EXPTL_CRYSTAL
+    _name.object_id               EXPTL_CRYSTAL_APPEARANCE
+    _category_key.name            '_exptl_crystal_appearance.id'
+
+save_
+
+save_exptl_crystal_appearance.id
+
+    _definition.id                '_exptl_crystal_appearance.id'
+    _definition.update            2023-10-15
+    _description.text
+;
+    Unique identifier for a information about the crystal colour and appearance.
+;
+    _name.category_id             exptl_crystal_appearance
     _name.object_id               id
     _type.purpose                 Key
     _type.source                  Assigned
