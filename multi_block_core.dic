@@ -935,6 +935,40 @@ save_valence.id
 
 save_
 
+save_PUBLICATION
+
+    _definition.id                PUBLICATION
+    _definition.scope             Category
+    _definition.class             Set
+    _definition.update            2023-10-15
+    _description.text
+;
+    The DICTIONARY group encompassing the CORE PUBLICATION data items defined
+    and used within the Crystallographic Information Framework (CIF).
+;
+    _name.category_id             CIF_CORE
+    _name.object_id               PUBLICATION
+    _category_key.name            '_publication.id'
+
+save_
+
+save_publication.id
+
+    _definition.id                '_publication.id'
+    _definition.update            2023-10-15
+    _description.text
+;
+    Unique identifier for CORE PUBLICATION data items.
+;
+    _name.category_id             publication
+    _name.object_id               id
+    _type.purpose                 Key
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
     loop_
       _dictionary_audit.version
       _dictionary_audit.date
