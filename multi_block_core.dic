@@ -416,6 +416,44 @@ save_diffrn_reflns.id
 
 save_
 
+save_DIFFRN_REFLNS_TRANSF_MATRIX
+
+    _definition.id                DIFFRN_REFLNS_TRANSF_MATRIX
+    _definition.scope             Category
+    _definition.class             Set
+    _definition.update            2023-10-15
+    _description.text
+;
+    The CATEGORY of data items which specify the elements of the matrix
+    used to transform the reflection indices _diffrn_refln.hkl
+    into _refln.hkl.
+                                |11 12 13|
+           (h k l) diffraction  |21 22 23|  =  (h' k' l')
+                                |31 32 33|
+;
+    _name.category_id             DIFFRN_REFLNS
+    _name.object_id               DIFFRN_REFLNS_TRANSF_MATRIX
+    _category_key.name            '_diffrn_reflns_transf_matrix.id'
+
+save_
+
+save_diffrn_reflns_transf_matrix.id
+
+    _definition.id                '_diffrn_reflns_transf_matrix.id'
+    _definition.update            2023-10-15
+    _description.text
+;
+    Unique identifier for a transformation matrix.
+;
+    _name.category_id             diffrn_reflns_transf_matrix
+    _name.object_id               id
+    _type.purpose                 Key
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
 save_EXPTL_CRYSTAL
 
     _definition.id                EXPTL_CRYSTAL
