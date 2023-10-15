@@ -1209,6 +1209,39 @@ save_journal_coeditor.id
 
 save_
 
+save_JOURNAL_DATE
+
+    _definition.id                JOURNAL_DATE
+    _definition.scope             Category
+    _definition.class             Set
+    _definition.update            2023-10-15
+    _description.text
+;
+    Category of items recording dates of publication processing.
+;
+    _name.category_id             JOURNAL
+    _name.object_id               JOURNAL_DATE
+    _category_key.name            '_journal_date.id'
+
+save_
+
+save_journal_date.id
+
+    _definition.id                '_journal_date.id'
+    _definition.update            2023-10-15
+    _description.text
+;
+    Unique identifier for dates of publication processing.
+;
+    _name.category_id             journal_date
+    _name.object_id               id
+    _type.purpose                 Key
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
     loop_
       _dictionary_audit.version
       _dictionary_audit.date
