@@ -1350,6 +1350,40 @@ save_publ_manuscript.id
 
 save_
 
+save_PUBL_REQUESTED
+
+    _definition.id                PUBL_REQUESTED
+    _definition.scope             Category
+    _definition.class             Set
+    _definition.update            2023-10-15
+    _description.text
+;
+    CATEGORY of data items that enable the author to make
+    specific requests to the journal office for processing.
+;
+    _name.category_id             PUBL
+    _name.object_id               PUBL_REQUESTED
+    _category_key.name            '_publ_requested.id'
+
+save_
+
+save_publ_requested.id
+
+    _definition.id                '_publ_requested.id'
+    _definition.update            2023-10-15
+    _description.text
+;
+    Unique identifier for specific publication author requests.
+;
+    _name.category_id             publ_requested
+    _name.object_id               id
+    _type.purpose                 Key
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
     loop_
       _dictionary_audit.version
       _dictionary_audit.date
