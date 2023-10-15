@@ -563,6 +563,42 @@ save_reflns.id
 
 save_
 
+save_EXPTL
+
+    _definition.id                EXPTL
+    _definition.scope             Category
+    _definition.class             Set
+    _definition.update            2023-10-15
+    _description.text
+;
+    The CATEGORY of data items used to specify the experimental work
+    prior to diffraction measurements. These include crystallization
+    crystal measurements and absorption-correction techniques used.
+;
+    _name.category_id             CIF_CORE
+    _name.object_id               EXPTL
+    _category_key.name            '_exptl.id'
+
+save_
+
+save_exptl.id
+
+    _definition.id                '_exptl.id'
+    _definition.update            2023-10-15
+    _description.text
+;
+    Unique identifier for a the experimental work prior to diffraction
+    measurements.
+;
+    _name.category_id             exptl
+    _name.object_id               id
+    _type.purpose                 Key
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
 save_EXPTL_CRYSTAL
 
     _definition.id                EXPTL_CRYSTAL
