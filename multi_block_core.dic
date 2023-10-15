@@ -54,6 +54,40 @@ save_MULTIBLOCK_CORE
 
 save_
 
+save_DIFFRACTION
+
+    _definition.id                DIFFRACTION
+    _definition.scope             Category
+    _definition.class             Set
+    _definition.update            2023-10-15
+    _description.text
+;
+    The DICTIONARY group encompassing the CORE DIFFRACTION data items defined
+    and used within the Crystallographic Information Framework (CIF).
+;
+    _name.category_id             CIF_CORE
+    _name.object_id               DIFFRACTION
+    _category_key.name            '_diffraction.id'
+
+save_
+
+save_diffraction.id
+
+    _definition.id                '_diffraction.id'
+    _definition.update            2023-10-15
+    _description.text
+;
+    Unique identifier for CORE DIFFRACTION data items.
+;
+    _name.category_id             diffraction
+    _name.object_id               id
+    _type.purpose                 Key
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
 save_DIFFRN
 
     _definition.id                DIFFRN
