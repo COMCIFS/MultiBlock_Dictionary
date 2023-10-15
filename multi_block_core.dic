@@ -1038,6 +1038,39 @@ save_computing.id
 
 save_
 
+save_DATABASE
+
+    _definition.id                DATABASE
+    _definition.scope             Category
+    _definition.class             Set
+    _definition.update            2023-10-15
+    _description.text
+;
+    The CATEGORY of data items recording database deposition.
+;
+    _name.category_id             PUBLICATION
+    _name.object_id               DATABASE
+    _category_key.name            '_database.id'
+
+save_
+
+save_database.id
+
+    _definition.id                '_database.id'
+    _definition.update            2023-10-15
+    _description.text
+;
+    Unique identifier for a database deposition.
+;
+    _name.category_id             database
+    _name.object_id               id
+    _type.purpose                 Key
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
     loop_
       _dictionary_audit.version
       _dictionary_audit.date
