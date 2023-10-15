@@ -599,6 +599,42 @@ save_exptl.id
 
 save_
 
+save_CHEMICAL
+
+    _definition.id                CHEMICAL
+    _definition.scope             Category
+    _definition.class             Set
+    _definition.update            2023-10-15
+    _description.text
+;
+    The CATEGORY of data items which describe the composition and
+    chemical properties of the compound under study. The formula data
+    items must be consistent with the density, unit-cell and Z values.
+;
+    _name.category_id             EXPTL
+    _name.object_id               CHEMICAL
+    _category_key.name            '_chemical.id'
+
+save_
+
+save_chemical.id
+
+    _definition.id                '_chemical.id'
+    _definition.update            2023-10-15
+    _description.text
+;
+    Unique identifier for the composition and chemical properties of the
+    compound under study.
+;
+    _name.category_id             chemical
+    _name.object_id               id
+    _type.purpose                 Key
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
 save_EXPTL_CRYSTAL
 
     _definition.id                EXPTL_CRYSTAL
