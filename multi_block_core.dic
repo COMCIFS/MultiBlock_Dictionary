@@ -488,6 +488,41 @@ save_diffrn_source.id
 
 save_
 
+save_DIFFRN_STANDARDS
+
+    _definition.id                DIFFRN_STANDARDS
+    _definition.scope             Category
+    _definition.class             Set
+    _definition.update            2023-10-15
+    _description.text
+;
+    The CATEGORY of data items which specify information about the
+    standard reflections used in the diffraction measurement process.
+;
+    _name.category_id             DIFFRN
+    _name.object_id               DIFFRN_STANDARDS
+    _category_key.name            '_diffrn_standards.id'
+
+save_
+
+save_diffrn_standards.id
+
+    _definition.id                '_diffrn_standards.id'
+    _definition.update            2023-10-15
+    _description.text
+;
+    Unique identifier for the standard reflections used in the diffraction
+    measurement process.
+;
+    _name.category_id             diffrn_standards
+    _name.object_id               id
+    _type.purpose                 Key
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
 save_EXPTL_CRYSTAL
 
     _definition.id                EXPTL_CRYSTAL
