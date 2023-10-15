@@ -1106,6 +1106,40 @@ save_database_code.id
 
 save_
 
+save_DISPLAY
+
+    _definition.id                DISPLAY
+    _definition.scope             Category
+    _definition.class             Set
+    _definition.update            2023-10-15
+    _description.text
+;
+    The CATEGORY of data items used to enumerate the display
+    parameters used in the discipline.
+;
+    _name.category_id             PUBLICATION
+    _name.object_id               DISPLAY
+    _category_key.name            '_display.id'
+
+save_
+
+save_display.id
+
+    _definition.id                '_display.id'
+    _definition.update            2023-10-15
+    _description.text
+;
+    Unique identifier for display parameters.
+;
+    _name.category_id             display
+    _name.object_id               id
+    _type.purpose                 Key
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
     loop_
       _dictionary_audit.version
       _dictionary_audit.date
