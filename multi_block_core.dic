@@ -1594,6 +1594,40 @@ save_atom_sites_fract_transform.id
 
 save_
 
+save_REFINE
+
+    _definition.id                REFINE
+    _definition.scope             Category
+    _definition.class             Set
+    _definition.update            2023-10-15
+    _description.text
+;
+    The CATEGORY of data items used to specify information about the
+    refinement of the structural model.
+;
+    _name.category_id             STRUCTURE
+    _name.object_id               REFINE
+    _category_key.name            '_refine.id'
+
+save_
+
+save_refine.id
+
+    _definition.id                '_refine.id'
+    _definition.update            2023-10-15
+    _description.text
+;
+    Unique identifier for a refinement of the structural model.
+;
+    _name.category_id             refine
+    _name.object_id               id
+    _type.purpose                 Key
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
     loop_
       _dictionary_audit.version
       _dictionary_audit.date
