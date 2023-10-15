@@ -1071,6 +1071,41 @@ save_database.id
 
 save_
 
+save_DATABASE_CODE
+
+    _definition.id                DATABASE_CODE
+    _definition.scope             Category
+    _definition.class             Set
+    _definition.update            2023-10-15
+    _description.text
+;
+    The CATEGORY of data items recording database deposition. These data items
+    are assigned by database managers and should only appear in a CIF if they
+    originate from that source.
+;
+    _name.category_id             DATABASE
+    _name.object_id               DATABASE_CODE
+    _category_key.name            '_database_code.id'
+
+save_
+
+save_database_code.id
+
+    _definition.id                '_database_code.id'
+    _definition.update            2023-10-15
+    _description.text
+;
+    Unique identifier for a database deposition from a database manager.
+;
+    _name.category_id             database_code
+    _name.object_id               id
+    _type.purpose                 Key
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
     loop_
       _dictionary_audit.version
       _dictionary_audit.date
