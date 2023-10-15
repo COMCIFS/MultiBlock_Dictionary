@@ -1628,6 +1628,40 @@ save_refine.id
 
 save_
 
+save_REFINE_LS
+
+    _definition.id                REFINE_LS
+    _definition.scope             Category
+    _definition.class             Set
+    _definition.update            2023-10-15
+    _description.text
+;
+    The CATEGORY of data items used to specify information about the
+    refinement of the structural model.
+;
+    _name.category_id             REFINE
+    _name.object_id               REFINE_LS
+    _category_key.name            '_refine_ls.id'
+
+save_
+
+save_refine_ls.id
+
+    _definition.id                '_refine_ls.id'
+    _definition.update            2023-10-15
+    _description.text
+;
+    Unique identifier for a refinement of the structural model.
+;
+    _name.category_id             refine_ls
+    _name.object_id               id
+    _type.purpose                 Key
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
     loop_
       _dictionary_audit.version
       _dictionary_audit.date
