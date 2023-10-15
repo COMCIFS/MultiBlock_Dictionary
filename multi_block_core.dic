@@ -382,6 +382,40 @@ save_diffrn_radiation.id
 
 save_
 
+save_DIFFRN_REFLNS
+
+    _definition.id                DIFFRN_REFLNS
+    _definition.scope             Category
+    _definition.class             Set
+    _definition.update            2023-10-15
+    _description.text
+;
+    The CATEGORY of data items which specify the overall reflection
+    measurement information.
+;
+    _name.category_id             DIFFRN
+    _name.object_id               DIFFRN_REFLNS
+    _category_key.name            '_diffrn_reflns.id'
+
+save_
+
+save_diffrn_reflns.id
+
+    _definition.id                '_diffrn_reflns.id'
+    _definition.update            2023-10-15
+    _description.text
+;
+    Unique identifier for the overall reflection measurement information.
+;
+    _name.category_id             diffrn_reflns
+    _name.object_id               id
+    _type.purpose                 Key
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
 save_EXPTL_CRYSTAL
 
     _definition.id                EXPTL_CRYSTAL
