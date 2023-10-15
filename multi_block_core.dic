@@ -1384,6 +1384,44 @@ save_publ_requested.id
 
 save_
 
+save_PUBL_SECTION
+
+    _definition.id                PUBL_SECTION
+    _definition.scope             Category
+    _definition.class             Set
+    _definition.update            2023-10-15
+    _description.text
+;
+    Manuscript section data if submitted in parts. See also
+    _publ_manuscript.text and _publ_manuscript.processed.
+    The _publ_section.exptl_prep, _publ_section.exptl_refinement
+    and _publ_section.exptl_solution items are preferred for
+    separating the chemical preparation, refinement and structure
+    solution aspects of the experimental description.
+;
+    _name.category_id             PUBL
+    _name.object_id               PUBL_SECTION
+    _category_key.name            '_publ_section.id'
+
+save_
+
+save_publ_section.id
+
+    _definition.id                '_publ_section.id'
+    _definition.update            2023-10-15
+    _description.text
+;
+    Unique identifier for a manuscription section.
+;
+    _name.category_id             publ_section
+    _name.object_id               id
+    _type.purpose                 Key
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
     loop_
       _dictionary_audit.version
       _dictionary_audit.date
