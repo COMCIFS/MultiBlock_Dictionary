@@ -969,6 +969,40 @@ save_publication.id
 
 save_
 
+save_AUDIT
+
+    _definition.id                AUDIT
+    _definition.scope             Category
+    _definition.class             Set
+    _definition.update            2023-10-15
+    _description.text
+;
+    The CATEGORY of data items used to record details about the
+    creation and subsequent updating of the data block.
+;
+    _name.category_id             PUBLICATION
+    _name.object_id               AUDIT
+    _category_key.name            '_audit.id'
+
+save_
+
+save_audit.id
+
+    _definition.id                '_audit.id'
+    _definition.update            2023-10-15
+    _description.text
+;
+    Unique identifier for metadata about a data block.
+;
+    _name.category_id             audit
+    _name.object_id               id
+    _type.purpose                 Key
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
     loop_
       _dictionary_audit.version
       _dictionary_audit.date
