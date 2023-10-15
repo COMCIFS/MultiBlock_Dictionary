@@ -1559,6 +1559,41 @@ save_atom_sites_cartn_transform.id
 
 save_
 
+save_ATOM_SITES_FRACT_TRANSFORM
+
+    _definition.id                ATOM_SITES_FRACT_TRANSFORM
+    _definition.scope             Category
+    _definition.class             Set
+    _definition.update            2023-10-15
+    _description.text
+;
+    The CATEGORY of data items used to describe the matrix elements
+    used to transform Cartesian coordinates into fractional coordinates
+    of all atom sites in a crystal structure.
+;
+    _name.category_id             ATOM_SITES
+    _name.object_id               ATOM_SITES_FRACT_TRANSFORM
+    _category_key.name            '_atom_sites_fract_transform.id'
+
+save_
+
+save_atom_sites_fract_transform.id
+
+    _definition.id                '_atom_sites_fract_transform.id'
+    _definition.update            2023-10-15
+    _description.text
+;
+    Unique identifier for an atom site matrix transformation.
+;
+    _name.category_id             atom_sites_fract_transform
+    _name.object_id               id
+    _type.purpose                 Key
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
     loop_
       _dictionary_audit.version
       _dictionary_audit.date
