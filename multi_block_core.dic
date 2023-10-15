@@ -208,6 +208,41 @@ save_cell_measurement.diffrn_id
 
 save_
 
+save_DIFFRN_DETECTOR
+
+    _definition.id                DIFFRN_DETECTOR
+    _definition.scope             Category
+    _definition.class             Set
+    _definition.update            2023-10-15
+    _description.text
+;
+    The CATEGORY of data items which specify the detectors used
+    in the measurement of diffraction intensities.
+;
+    _name.category_id             DIFFRN
+    _name.object_id               DIFFRN_DETECTOR
+    _category_key.name            '_diffrn_detector.id'
+
+save_
+
+save_diffrn_detector.id
+
+    _definition.id                '_diffrn_detector.id'
+    _definition.update            2023-10-15
+    _description.text
+;
+    Unique identifier for a detector used in the measurement of diffraction
+    intensities.
+;
+    _name.category_id             diffrn_detector
+    _name.object_id               id
+    _type.purpose                 Key
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
 save_EXPTL_CRYSTAL
 
     _definition.id                EXPTL_CRYSTAL
