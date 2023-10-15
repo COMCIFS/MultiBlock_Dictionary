@@ -1422,6 +1422,40 @@ save_publ_section.id
 
 save_
 
+save_STRUCTURE
+
+    _definition.id                STRUCTURE
+    _definition.scope             Category
+    _definition.class             Set
+    _definition.update            2023-10-15
+    _description.text
+;
+    The DICTIONARY group encompassing the CORE STRUCTURE data items defined
+    and used within the Crystallographic Information Framework (CIF).
+;
+    _name.category_id             CIF_CORE
+    _name.object_id               STRUCTURE
+    _category_key.name            '_structure.id'
+
+save_
+
+save_structure.id
+
+    _definition.id                '_structure.id'
+    _definition.update            2023-10-15
+    _description.text
+;
+    Unique identifier for a structure.
+;
+    _name.category_id             structure
+    _name.object_id               id
+    _type.purpose                 Key
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
     loop_
       _dictionary_audit.version
       _dictionary_audit.date
