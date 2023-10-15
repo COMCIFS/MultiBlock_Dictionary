@@ -1276,6 +1276,47 @@ save_journal_techeditor.id
 
 save_
 
+save_PUBL
+
+    _definition.id                PUBL
+    _definition.scope             Category
+    _definition.class             Set
+    _definition.update            2023-10-15
+    _description.text
+;
+    Data items in the PUBL category are used when submitting a
+    manuscript for publication. They refer either to the paper as
+    a whole, or to specific named elements within a paper (such as
+    the title and abstract, or the Comment and Experimental
+    sections of Acta Crystallographica Section C). The data items
+    in the PUBL_BODY category should be used for the textual
+    content of other submissions. Typically, each journal will
+    supply a list of the specific items it requires in its Notes
+    for Authors.
+;
+    _name.category_id             PUBLICATION
+    _name.object_id               PUBL
+    _category_key.name            '_publ.id'
+
+save_
+
+save_publ.id
+
+    _definition.id                '_publ.id'
+    _definition.update            2023-10-15
+    _description.text
+;
+    Unique identifier for a publication details.
+;
+    _name.category_id             publ
+    _name.object_id               id
+    _type.purpose                 Key
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
     loop_
       _dictionary_audit.version
       _dictionary_audit.date
