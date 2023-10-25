@@ -10,7 +10,7 @@ data_MULTIBLOCK_DIC
     _dictionary.title             MULTIBLOCK_DIC
     _dictionary.class             Instance
     _dictionary.version           1.1.0
-    _dictionary.date              2023-09-28
+    _dictionary.date              2023-10-25
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/MultiBlock_Dictionary/main/multi_block_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -456,11 +456,10 @@ save_STRUCTURE
     _definition.id                STRUCTURE
     _definition.scope             Category
     _definition.class             Set
-    _definition.update            2023-10-16
+    _definition.update            2023-10-25
     _description.text
 ;
-    The DICTIONARY group encompassing the CORE STRUCTURE data items defined
-    and used within the Crystallographic Information Framework (CIF).
+    A category for collecting information about a crystallographic structure.
 ;
     _name.category_id             CIF_CORE
     _name.object_id               STRUCTURE
@@ -668,7 +667,9 @@ save_
 ;
        All multi-block items from core 3.2.0 added.
 ;
-         1.1.0                    2023-09-28
+         1.1.0                    2023-10-25
 ;
        # Update date above and add audit comments below. Remove
        this comment when ready for release.
+
+       Add STRUCTURE and related data names and links.
