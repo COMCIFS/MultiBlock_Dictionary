@@ -124,6 +124,29 @@ save_CELL
 
 save_
 
+save_cell.diffrn_id
+
+    _definition.id                '_cell.diffrn_id'
+    _definition.update            2023-10-26
+    _description.text
+;
+    A pointer to the diffraction conditions to which this cell has been applied,
+    for example, to locate and extract diffraction peaks. These will normally be
+    the same conditions as those under which the cell was measured, but some
+    legacy data sets may have used a cell measured under differing conditions,
+    in which case those conditions should be indicated using the
+    _cell_measurement.condition_id data item.
+;
+    _name.category_id             cell
+    _name.object_id               diffrn_id
+    _name.linked_item_id          '_diffrn.id'
+    _type.purpose                 Link
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
 save_cell.structure_id
 
     _definition.id                '_cell.structure_id'
@@ -181,6 +204,25 @@ save_cell_measurement.condition_id
 ;
     _enumeration.default = _cell_measurement.diffrn_id
 ;
+
+save_
+
+save_cell_measurement.diffrn_id
+
+    _definition.id                '_cell_measurement.diffrn_id'
+    _definition.update            2023-10-26
+    _description.text
+;
+    A pointer to the diffraction experiment to which the measured cell
+    has been applied.
+;
+    _name.category_id             cell_measurement
+    _name.object_id               diffrn_id
+    _name.linked_item_id          '_diffrn.id'
+    _type.purpose                 Link
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Word
 
 save_
 
