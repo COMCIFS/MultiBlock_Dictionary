@@ -1,0 +1,112 @@
+#\#CIF_2.0
+##
+# Two datablocks present two structures. A third datablock contains experimental
+# conditions.
+#
+# In the below example, it isn't strictly necessary to explicitly give values to
+# _structure.id or _space_group.id, as there is only one present per block.
+#
+# A representation of the resultant merged data is given in example_1_merged.cif
+#
+##
+
+
+data_conditions
+_diffrn.id DIFCON_1
+_diffrn.ambient_temperature  900
+
+
+
+data_blockname_one
+_structure.id A   # Must be unique.
+_structure.diffrn_id  DIFCON_1
+
+_cell.length_a            5.4469
+_cell.length_b            5.4469
+_cell.length_c            5.4469
+_cell.angle_alpha        90
+_cell.angle_beta         90
+_cell.angle_gamma        90
+_cell.volume            161.61
+_cell.formula_units_Z     4
+
+_space_group.id 1 # Must be unique.
+                  # Can be the same if representing the:
+                  #    same space group name and number
+                  #    same setting
+                  #    same symops with the same id values
+_space_group.crystal_system	  cubic
+_space_group.name_H-M_alt     Fm-3m
+
+loop_
+  _space_group_symop_id
+  _space_group_symop_operation_xyz
+    1 'x, y, z '
+    2 '-x, -y, z '
+  #...
+  191 'x, y+1/2, -z+1/2 '
+  192 '-x, -y+1/2, -z+1/2 '
+
+loop_
+  _atom_site.label
+  _atom_site.type_symbol
+  _atom_site.fract_xyz
+  _atom_site.B_iso_or_equiv
+Mn1 Mn+2 [0   0   0]   0.2
+Se1 Se   [0.5 0.5 0.5] 0.4
+
+loop_
+  _atom_site_aniso.label
+  _atom_site_aniso.b_11
+  _atom_site_aniso.b_12
+  _atom_site_aniso.b_13
+  _atom_site_aniso.b_22
+  _atom_site_aniso.b_23
+  _atom_site_aniso.b_33
+Mn1 0.2 0.05 0.08 0.2 0.03 0.2
+
+
+
+data_blockname2
+_structure.id B   #Must be unique.
+_structure.diffrn_id  DIFCON_1
+
+_cell.length_a            3.0205
+_cell.length_b            3.0205
+_cell.length_c            3.0205
+_cell.angle_alpha        90
+_cell.angle_beta         90
+_cell.angle_gamma        90
+_cell.volume             27.558
+_cell.formula_units_Z	  2
+
+_space_group.id 2 # Must be unique.
+                  # Can be the same if representing the:
+                  #    same space group name and number
+                  #    same setting
+                  #    same symops with the same id values
+_space_group.crystal_system	cubic
+_space_group.name_H-M_alt Im-3m
+loop_
+  _space_group.symop_id
+  _space_group.symop_operation_xyz
+    1 'x, y, z '
+    2 '-x, -y, z '
+   #...
+   95 'x+1/2, y+1/2, -z+1/2 '
+   96 '-x+1/2, -y+1/2, -z+1/2 '
+
+loop_
+  _atom_site.label
+  _atom_site.type_symbol
+  _atom_site.fract_xyz
+  _atom_site.B_iso_or_equiv
+V1 V [0 0 0] 0.5
+
+###################################
+#
+#  End of the CIF file
+#
+###################################
+
+

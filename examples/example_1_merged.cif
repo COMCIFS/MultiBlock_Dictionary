@@ -1,0 +1,79 @@
+#\#CIF_2.0
+##
+#  A representation of a merged datablock for the data given in example_1.cif.
+#
+#  It shouldn't actually be used this way to construct a CIF file, but this
+#  maps out how the relational tables would be populated.
+#
+##
+
+
+
+data_merged
+loop_
+  _diffrn.id
+  _diffrn.ambient_temperature
+DIFCON_1  900
+
+loop_
+  _structure.id
+  _structure.space_group_id
+  _structure.diffrn_id
+A 1 DIFCON_1
+B 2 DIFCON_1
+
+loop_
+  _cell.structure_id
+  _cell.length_a
+  _cell.length_b
+  _cell.length_c
+  _cell.angle_alpha
+  _cell.angle_beta
+  _cell.angle_gamma
+  _cell.volume
+  _cell.formula_units_Z
+A  5.4469 5.4469 5.4469 90 90 90 161.61  4
+B  3.0205 3.0205 3.0205 90 90 90  27.558 2
+
+loop_
+  _space_group.id
+  _space_group.crystal_system
+  _space_group.name_H-M_alt
+1 cubic Fm-3m
+2 cubic Im-3m
+
+loop_
+  _space_group_symop.space_group_id
+  _space_group_symop.id
+  _space_group_symop.operation_xyz
+1   1 'x, y, z '
+1   2 '-x, -y, z '
+#...
+1 191 'x, y+1/2, -z+1/2 '
+1 192 '-x, -y+1/2, -z+1/2 '
+2   1 'x, y, z '
+2   2 '-x, -y, z '
+#...
+2  95 'x+1/2, y+1/2, -z+1/2 '
+2  96 '-x+1/2, -y+1/2, -z+1/2 '
+
+loop_
+  _atom_site.structure_id
+  _atom_site.label
+  _atom_site.type_symbol
+  _atom_site.fract_xyz
+  _atom_site.B_iso_or_equiv
+A Mn1 Mn+2 [0   0   0]   0.2
+A Se1 Se   [0.5 0.5 0.5] 0.4
+B V1  V    [0   0   0]   0.5
+
+loop_
+  _atom_site_aniso.structure_id
+  _atom_site_aniso.label
+  _atom_site_aniso.b_11
+  _atom_site_aniso.b_12
+  _atom_site_aniso.b_13
+  _atom_site_aniso.b_22
+  _atom_site_aniso.b_23
+  _atom_site_aniso.b_33
+A Mn1 0.2 0.05 0.08 0.2 0.03 0.2
