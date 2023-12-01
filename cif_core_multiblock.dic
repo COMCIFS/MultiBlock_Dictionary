@@ -12,7 +12,7 @@ data_MULTIBLOCK_DIC
     _dictionary.version           1.0.0
     _dictionary.date              2023-12-01
     _dictionary.uri
-        https://www.iucr.org/__data/iucr/cif/dictionaries/cif_core_multiblock.dic
+        https://www.iucr.org/__data/iucr/cif/dictionaries/cif_core_multiblock_1.0.0.dic
     _dictionary.ddl_conformance   4.2.0
     _dictionary.namespace         CifCore
     _description.text
