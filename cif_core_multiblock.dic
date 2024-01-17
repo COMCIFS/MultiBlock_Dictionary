@@ -1,7 +1,7 @@
 #\#CIF_2.0
 ##########################################################################
 #                                                                        #
-#  MULTIBLOCK CIF CORE DICTIONARY                                        #
+#  MULTIBLOCK CORE CIF DICTIONARY                                        #
 #                                                                        #
 ##########################################################################
 
@@ -10,14 +10,14 @@ data_MULTIBLOCK_DIC
     _dictionary.title             MULTIBLOCK_DIC
     _dictionary.class             Instance
     _dictionary.version           1.0.0
-    _dictionary.date              2023-09-15
+    _dictionary.date              2023-12-01
     _dictionary.uri
-        https://raw.githubusercontent.com/COMCIFS/MultiBlock_Dictionary/main/multi_block_core.dic
+        https://www.iucr.org/__data/iucr/cif/dictionaries/cif_core_multiblock_1.0.0.dic
     _dictionary.ddl_conformance   4.2.0
     _dictionary.namespace         CifCore
     _description.text
 ;
-    The multi block dictionary adds data names to the core dictionary which
+    The multiblock dictionary adds data names to the core dictionary which
     allow description of data spread over multiple data units (blocks).
 
     Under the default schema, all data names in Set categories must be
