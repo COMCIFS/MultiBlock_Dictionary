@@ -10,7 +10,7 @@ data_MULTIBLOCK_DIC
     _dictionary.title             MULTIBLOCK_DIC
     _dictionary.class             Instance
     _dictionary.version           1.1.0
-    _dictionary.date              2023-10-26
+    _dictionary.date              2024-02-05
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/MultiBlock_Dictionary/main/multi_block_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -124,36 +124,14 @@ save_CELL
 
 save_
 
-save_cell.diffrn_id
-
-    _definition.id                '_cell.diffrn_id'
-    _definition.update            2023-10-26
-    _description.text
-;
-    A pointer to the diffraction conditions to which this cell has been applied,
-    for example, to locate and extract diffraction peaks. These will normally be
-    the same conditions as those under which the cell was measured, but some
-    legacy data sets may have used a cell measured under differing conditions,
-    in which case those conditions should be indicated using the
-    _cell_measurement.condition_id data item.
-;
-    _name.category_id             cell
-    _name.object_id               diffrn_id
-    _name.linked_item_id          '_diffrn.id'
-    _type.purpose                 Link
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Word
-
-save_
-
 save_cell.structure_id
 
     _definition.id                '_cell.structure_id'
-    _definition.update            2023-10-16
+    _definition.update            2024-02-05
     _description.text
 ;
-    A code identifying the structure to which this atom site belongs.
+    A code identifying the crystallographic structure associated with this cell
+    description.
 ;
     _name.category_id             cell
     _name.object_id               structure_id
@@ -229,10 +207,10 @@ save_
 save_cell_measurement.structure_id
 
     _definition.id                '_cell_measurement.structure_id'
-    _definition.update            2023-10-16
+    _definition.update            2024-02-05
     _description.text
 ;
-    A code identifying the structure to which the cell belongs.
+    A code identifying the structure to which the cell being measured belongs.
 ;
     _name.category_id             cell_measurement
     _name.object_id               structure_id
@@ -713,9 +691,12 @@ save_
 ;
        All multi-block items from core 3.2.0 added.
 ;
-         1.1.0                    2023-10-26
+         1.1.0                    2024-02-05
 ;
        # Update date above and add audit comments below. Remove
        this comment when ready for release.
 
        Add STRUCTURE and related data names and links.
+
+       Update definitions of _cell.structure_id and
+       _cell_measurement.structure_id. Removed _cell.diffrn_id.
