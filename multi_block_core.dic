@@ -700,3 +700,4 @@ save_
 
        Update definitions of _cell.structure_id and
        _cell_measurement.structure_id. Removed _cell.diffrn_id.
+;
