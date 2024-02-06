@@ -1,13 +1,10 @@
 #\#CIF_2.0
 ##
-#  A representation of a merged datablock for the data given in example_1.cif.
+# A representation of a merged data block for the data given in example_1.cif.
 #
-#  It shouldn't actually be used this way to construct a CIF file, but this
-#  maps out how the relational tables would be populated.
-#
+# It should not actually be used this way to construct a CIF file, but this
+# maps out how the relational tables would be populated.
 ##
-
-
 
 data_merged
 loop_
@@ -32,8 +29,8 @@ loop_
   _cell.angle_gamma
   _cell.volume
   _cell.formula_units_Z
-A  5.4469 5.4469 5.4469 90 90 90 161.61  4
-B  3.0205 3.0205 3.0205 90 90 90  27.558 2
+A  5.4469 5.4469 5.4469 90 90 90 161.61 4
+B  3.0205 3.0205 3.0205 90 90 90 27.558 2
 
 loop_
   _space_group.id
@@ -46,16 +43,16 @@ loop_
   _space_group_symop.space_group_id
   _space_group_symop.id
   _space_group_symop.operation_xyz
-1   1 'x, y, z '
-1   2 '-x, -y, z '
+1   1 'x, y, z'
+1   2 '-x, -y, z'
 #...
-1 191 'x, y+1/2, -z+1/2 '
-1 192 '-x, -y+1/2, -z+1/2 '
-2   1 'x, y, z '
-2   2 '-x, -y, z '
+1 191 'x, y+1/2, -z+1/2'
+1 192 '-x, -y+1/2, -z+1/2'
+2   1 'x, y, z'
+2   2 '-x, -y, z'
 #...
-2  95 'x+1/2, y+1/2, -z+1/2 '
-2  96 '-x+1/2, -y+1/2, -z+1/2 '
+2  95 'x+1/2, y+1/2, -z+1/2'
+2  96 '-x+1/2, -y+1/2, -z+1/2'
 
 loop_
   _atom_site.structure_id

@@ -1,33 +1,32 @@
 #\#CIF_2.0
 ##
-#  A pathalogical example of how structure information is disparate datablocks
-#  can be gathered to form a single structure representation.
+# A pathalogical example of how structure information is disparate data blocks
+# can be gathered to form a single structure representation.
 #
-#  The first set of datablocks provides the data, and the final datablock gives
-#  a representation of how the resultant relational tables could be constructed.
+# The first set of data blocks provides the data, and the final data block gives
+# a representation of how the resultant relational tables could be constructed.
 #
-#  It shouldn't actually be used this way to construct a CIF file, but this
-#  maps out how the relational tables would be populated.
-#
+# It should npt actually be used this way to construct a CIF file, but this
+# maps out how the relational tables would be populated.
 ##
 
 # source data
-data_block1
+data_block_1
   _structure.id A
   _cell.length_a 12.3456
-data_block2
+data_block_2
   _structure.id A
   _cell.length_b 12.3456
-data_block3
+data_block_3
   _structure.id A
   _cell.length_c 12.3456
-data_block4
+data_block_4
   _structure.id A
   _cell.angle_alpha 90
-data_block5
+data_block_5
   _structure.id A
   _cell.angle_beta 90
-data_block6
+data_block_6
   _structure.id A
   _cell.angle_gamma 90
 
