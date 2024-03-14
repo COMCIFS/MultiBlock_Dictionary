@@ -675,7 +675,7 @@ save_atom_site_aniso.structure_id
 ;
     _name.category_id             atom_site_aniso
     _name.object_id               structure_id
-    _name.linked_item_id          '_structure.id'
+    _name.linked_item_id          '_atom_site.structure_id'
     _type.purpose                 Link
     _type.source                  Assigned
     _type.container               Single
