@@ -10,7 +10,7 @@ data_MULTIBLOCK_DIC
     _dictionary.title             MULTIBLOCK_DIC
     _dictionary.class             Instance
     _dictionary.version           1.1.0
-    _dictionary.date              2024-02-05
+    _dictionary.date              2024-05-14
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/MultiBlock_Dictionary/main/multi_block_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -40,7 +40,7 @@ save_MULTIBLOCK_CORE
     _definition.id                MULTIBLOCK_CORE
     _definition.scope             Category
     _definition.class             Head
-    _definition.update            2023-09-15
+    _definition.update            2024-05-14
     _description.text
 ;
     The MULTIBLOCK_CORE category becomes the overarching category
@@ -50,7 +50,7 @@ save_MULTIBLOCK_CORE
     _name.object_id               MULTIBLOCK_CORE
 
     _import.get
-        [{'dupl':Ignore  'file':cif_core.dic  'mode':Full  'save':CIF_CORE}]
+        [{'dupl':Ignore  'file':cif_core.dic  'mode':Full  'save':HEAD}]
 
 save_
 
@@ -691,7 +691,7 @@ save_
 ;
        All multi-block items from core 3.2.0 added.
 ;
-         1.1.0                    2024-02-05
+         1.1.0                    2024-05-14
 ;
        # Update date above and add audit comments below. Remove
        this comment when ready for release.
@@ -700,4 +700,7 @@ save_
 
        Update definitions of _cell.structure_id and
        _cell_measurement.structure_id. Removed _cell.diffrn_id.
+
+       Update the CIF_CORE dictionary import statement with the new Head
+       category name.
 ;
