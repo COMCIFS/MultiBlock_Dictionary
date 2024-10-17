@@ -10,7 +10,7 @@ data_MULTIBLOCK_DIC
     _dictionary.title             MULTIBLOCK_DIC
     _dictionary.class             Instance
     _dictionary.version           1.1.0
-    _dictionary.date              2024-05-15
+    _dictionary.date              2024-10-17
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/MultiBlock_Dictionary/main/multi_block_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -104,6 +104,45 @@ save_diffrn.id
     _name.object_id               id
     _type.purpose                 Key
     _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
+save_DIFFRN_RADIATION
+
+    _definition.id                DIFFRN_RADIATION
+    _definition.scope             Category
+    _definition.class             Set
+    _definition.update            2024-10-17
+    _description.text
+;
+    The CATEGORY of data items which specify the wavelength of the
+    radiation used in measuring diffraction intensities. To identify
+    and assign weights to distinct wavelength components from a
+    polychromatic beam, see DIFFRN_RADIATION_WAVELENGTH.
+;
+    _name.category_id             DIFFRACTION
+    _name.object_id               DIFFRN_RADIATION
+    _category_key.name            '_diffrn_radiation.diffrn_id'
+
+save_
+
+save_diffrn_radiation.diffrn_id
+
+    _definition.id                '_diffrn_radiation.diffrn_id'
+    _definition.update            2024-10-17
+    _description.text
+;
+    Unique identifier for a diffraction data set collected under
+    particular diffraction conditions. This item is a pointer to
+    _diffrn.id.
+;
+    _name.category_id             diffrn_radiation
+    _name.object_id               diffrn_id
+    _name.linked_item_id          '_diffrn.id'
+    _type.purpose                 Link
+    _type.source                  Related
     _type.container               Single
     _type.contents                Word
 
@@ -693,7 +732,7 @@ save_
 ;
        All multi-block items from core 3.2.0 added.
 ;
-         1.1.0                    2024-05-15
+         1.1.0                    2024-10-17
 ;
        # Update date above and add audit comments below. Remove
        this comment when ready for release.
@@ -705,4 +744,8 @@ save_
 
        Update the CIF_CORE dictionary import statement with the new Head
        category name.
+
+       Added _diffrn_radiation.diffrn_id as key for diffrn_radiation
+       category
 ;
+
