@@ -91,6 +91,26 @@ save_diffrn.crystal_id
 
 save_
 
+save_diffrn.diffrn_radiation_id
+
+    _definition.id                '_diffrn.diffrn_radiation_id'
+    _definition.update            2024-11-12
+    _description.text
+;
+    Identifies the characteristics of the radiation source
+    for the diffraction data. This is a pointer to
+    _diffrn_radiation.id.
+;
+    _name.category_id             diffrn
+    _name.object_id               diffrn_radiation_id
+    _name.linked_item_id          '_diffrn_radiation.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
 save_diffrn.id
 
     _definition.id                '_diffrn.id'
@@ -144,24 +164,6 @@ save_diffrn_radiation.diffrn_id
     _name.linked_item_id          '_diffrn.id'
     _type.purpose                 Link
     _type.source                  Related
-    _type.container               Single
-    _type.contents                Word
-
-save_
-
-save_diffrn_radiation.id
-
-    _definition.id                '_diffrn_radiation.id'
-    _definition_replaced.by       .
-    _definition.update            2024-11-12
-    _description.text
-;
-    Unique identifier for this radiation description.
-;
-    _name.category_id             diffrn_radiation
-    _name.object_id               id
-    _type.purpose                 Key
-    _type.source                  Assigned
     _type.container               Single
     _type.contents                Word
 
