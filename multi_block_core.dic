@@ -169,6 +169,24 @@ save_diffrn_radiation.diffrn_id
 
 save_
 
+save_diffrn_radiation.id
+
+    _definition.id                '_diffrn_radiation.id'
+    _definition_replaced.by       .
+    _definition.update            2024-11-15
+    _description.text
+;
+    Unique identifier for a radiation source description.
+;
+    _name.category_id             diffrn_radiation
+    _name.object_id               id
+    _type.purpose                 Key
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
 save_DIFFRN_RADIATION_WAVELENGTH
 
     _definition.id                DIFFRN_RADIATION_WAVELENGTH
