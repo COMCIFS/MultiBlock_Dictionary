@@ -56,6 +56,49 @@ save_MULTIBLOCK_CORE
 
 save_
 
+save_AUDIT_DATASET
+
+    _definition.id                AUDIT_DATASET
+    _definition.scope             Category
+    _definition.class             Loop
+    _definition.update            2025-04-14
+    _description.text
+;
+    The CATEGORY of data items used for linking data blocks to aid in grouping
+    blocks which contain information which are interrelated.
+
+    Data blocks which belong together are identified with the same unique id.
+;
+    _name.category_id             AUDIT
+    _name.object_id               AUDIT_DATASET
+    _category_key.name            '_audit_dataset.id'
+
+save_
+
+save_audit_dataset.id
+
+    _definition.id                '_audit_dataset.id'
+    _definition.update            2025-04-14
+    _description.text
+;
+    Identifier for this data block.
+
+    Data blocks which belong together, for instance, as they form part of the 
+    same experiment, are given an identical _audit_dataset.id value.
+
+    Data blocks, such as calibration information, can be designated with more
+    than one _audit_dataset.id value.
+;
+    _name.category_id             audit_dataset
+    _name.object_id               id
+    _type.purpose                 Key
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Word
+    _method.purpose               Definition
+
+save_
+
 save_DIFFRN
 
     _definition.id                DIFFRN
