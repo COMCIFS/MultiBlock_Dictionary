@@ -10,7 +10,7 @@ data_MULTIBLOCK_DIC
     _dictionary.title             MULTIBLOCK_DIC
     _dictionary.class             Instance
     _dictionary.version           1.1.0
-    _dictionary.date              2024-10-17
+    _dictionary.date              2025-04-14
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/MultiBlock_Dictionary/main/multi_block_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -67,11 +67,113 @@ save_AUDIT_DATASET
     The CATEGORY of data items used for linking data blocks to aid in grouping
     blocks which contain information which are interrelated.
 
-    Data blocks which belong together are identified with the same unique id.
+    Data blocks which should be interpreted together are identified with the 
+    same unique _audit_dataset.id.
 ;
     _name.category_id             AUDIT
     _name.object_id               AUDIT_DATASET
     _category_key.name            '_audit_dataset.id'
+
+    loop_
+      _description_example.case
+      _description_example.detail
+;
+         data_structure1
+         _audit_dataset.id  82c0a1e2-29ad-47b8-ace1-01e653e1cae8
+         _pd_phase.name "First phase"
+         #cell parameters and atom positions
+         #...
+         
+         data_structure2
+         _audit_dataset.id  82c0a1e2-29ad-47b8-ace1-01e653e1cae8
+         _pd_phase.id "Second phase"
+         #cell parameters and atom positions
+         #...
+         
+         data_diffraction_data1
+         _audit_dataset.id  82c0a1e2-29ad-47b8-ace1-01e653e1cae8
+         _pd_diffractogram.id "First dataset"
+         #diffracted intensities vs angle
+         #...
+         
+         data_information
+         _audit_dataset.id  82c0a1e2-29ad-47b8-ace1-01e653e1cae8
+         #wavelength, specimen preparation, temperature, pressure...
+         #...
+;
+;
+         Four data blocks for a powder diffraction experiment.
+         By the presence of an identical _audit_dataset.id value, it is made
+         clear that all four data blocks are to be interpreted together as 
+         a whole. It is clear that there are two crystal structures, one 
+         diffractogram, and a block containing other experimental information.
+
+         These blocks may be contained in the same file, or many files, but
+         the presence of an _audit_dataset.id value removes doubt as to their
+         relationship to each other.
+;
+;
+         data_structure1
+         _pd_phase.name "First phase"
+         #cell parameters and atom positions
+         #...
+         
+         data_structure2
+         _pd_phase.id "Second phase"
+         #cell parameters and atom positions
+         #...
+         
+         data_diffraction_data1
+         _pd_diffractogram.id "First dataset"
+         #diffracted intensities vs angle
+         #...
+         
+         data_information
+         #wavelength, specimen preparation, temperature, pressure...
+         #...
+;
+;
+         Four data blocks for a powder diffraction experiment.
+         The absence of an _audit_dataset.id value does not preclude that all 
+         or some of the four data blocks may to be interpretted together. The 
+         consumer of the information may be able to infer that they belong
+         together due to the presence of other information.
+;
+;
+         data_structure1
+         _audit_dataset.id  34e58dee-900c-47cf-8f8c-1f52e5a9a3b9
+         _pd_phase.name "First phase"
+         #cell parameters and atom positions
+         #...
+         
+         data_calibration_structure
+         loop_ 
+           _audit_dataset.id  
+           34e58dee-900c-47cf-8f8c-1f52e5a9a3b9
+           2d7ee621-d916-4302-9045-ec68f56add45
+           255bb051-a3d5-43f0-8384-fa8ccb2ce3c7
+         _pd_phase.id "Calibration phase"
+         #cell parameters and atom positions
+         #...
+         
+         data_diffraction_data
+         _audit_dataset.id  34e58dee-900c-47cf-8f8c-1f52e5a9a3b9
+         _pd_diffractogram.id "First dataset"
+         #diffracted intensities vs angle
+         #...
+;
+;
+         Three data blocks for a powder diffraction experiment.
+         By the presence of an identical _audit_dataset.id value, it is made
+         clear that all data blocks are to be interpretted together as 
+         a whole. The presence of multiple _audit_dataset.id values for the
+         second data block enables it to be included in more than one dataset.
+
+         Additionally, it is clear from the presence of different 
+         _audit_dataset.id values, that the diffractogram _pd_diffractogram.id 
+         "First dataset" in the first example is different to the diffractogram
+         _pd_diffractogram.id "First dataset" in this example.
+;
 
 save_
 
@@ -81,13 +183,19 @@ save_audit_dataset.id
     _definition.update            2025-04-14
     _description.text
 ;
-    Identifier for this data block.
+    Globally unique identifier for data blocks that are meant to be interpreted 
+    together as a whole.
 
     Data blocks which belong together, for instance, as they form part of the 
     same experiment, are given an identical _audit_dataset.id value.
 
     Data blocks, such as calibration information, can be designated with more
     than one _audit_dataset.id value.
+
+    Data blocks which do not contain the same unique _audit_dataset.id may still 
+    be related, depending on the presence of other data names and values. Data
+    blocks which contain different _audit_dataset.id values are not related in 
+    a CIF-sense.
 ;
     _name.category_id             audit_dataset
     _name.object_id               id
@@ -95,7 +203,6 @@ save_audit_dataset.id
     _type.source                  Related
     _type.container               Single
     _type.contents                Word
-    _method.purpose               Definition
 
 save_
 
@@ -775,7 +882,7 @@ save_
 ;
        All multi-block items from core 3.2.0 added.
 ;
-         1.1.0                    2024-10-17
+         1.1.0                    2025-04-14
 ;
        # Update date above and add audit comments below. Remove
        this comment when ready for release.
@@ -790,5 +897,7 @@ save_
 
        Added _diffrn_radiation.diffrn_id as key for diffrn_radiation
        category.
+
+       Added AUDIT_DATASET
 ;
 
