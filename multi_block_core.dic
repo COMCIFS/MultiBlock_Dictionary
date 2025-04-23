@@ -192,10 +192,10 @@ save_audit_dataset.id
     Data blocks, such as calibration information, can be designated with more
     than one _audit_dataset.id value.
 
-    Data blocks which do not contain the same unique _audit_dataset.id may still 
-    be related, depending on the presence of other data names and values. Data
-    blocks which contain different _audit_dataset.id values are not related in 
-    a CIF-sense.
+    Data blocks which do not contain an _audit_dataset.id may still be related, 
+    depending on the presence of other data names and values. Data blocks which 
+    contain different _audit_dataset.id values are not related in a CIF-sense,
+    even if other data names and values are common.
 ;
     _name.category_id             audit_dataset
     _name.object_id               id
