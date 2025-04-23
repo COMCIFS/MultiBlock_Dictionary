@@ -196,6 +196,8 @@ save_audit_dataset.id
     depending on the presence of other data names and values. Data blocks which 
     contain different _audit_dataset.id values are not related in a CIF-sense,
     even if other data names and values are common.
+
+    To ensure global uniqueness, a UUID-like identifier is suggested.
 ;
     _name.category_id             audit_dataset
     _name.object_id               id
