@@ -134,10 +134,10 @@ save_AUDIT_DATASET
 ;
 ;
          Four data blocks for a powder diffraction experiment.
-         The absence of an _audit_dataset.id value does not preclude that all 
-         or some of the four data blocks may to be interpretted together. The 
+         The absence of an _audit_dataset.id value does not preclude 
+         interpreting these data blocks together. The 
          consumer of the information may be able to infer that they belong
-         together due to the presence of other information.
+         together due to contextual information.
 ;
 ;
          data_structure1
@@ -164,13 +164,13 @@ save_AUDIT_DATASET
 ;
 ;
          Three data blocks for a powder diffraction experiment.
-         By the presence of an identical _audit_dataset.id value, it is made
-         clear that all data blocks are to be interpretted together as 
+         The identical _audit_dataset.id value makes it
+         clear that all data blocks are to be interpreted together as 
          a whole. The presence of multiple _audit_dataset.id values for the
-         second data block enables it to be included in more than one dataset.
+         second data block indicates it is included in more than one dataset.
 
-         Additionally, it is clear from the presence of different 
-         _audit_dataset.id values, that the diffractogram _pd_diffractogram.id 
+         Because they have different 
+         _audit_dataset.id values, the diffractogram _pd_diffractogram.id 
          "First dataset" in the first example is different to the diffractogram
          _pd_diffractogram.id "First dataset" in this example.
 ;
