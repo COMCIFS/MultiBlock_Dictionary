@@ -10,7 +10,7 @@ data_MULTIBLOCK_DIC
     _dictionary.title             MULTIBLOCK_DIC
     _dictionary.class             Instance
     _dictionary.version           1.1.0
-    _dictionary.date              2025-04-14
+    _dictionary.date              2025-04-29
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/MultiBlock_Dictionary/main/multi_block_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -553,7 +553,7 @@ save_SPACE_GROUP_GENERATOR
     _definition.id                SPACE_GROUP_GENERATOR
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2023-10-16
+    _definition.update            2025-04-29
     _description.text
 ;
     The CATEGORY of data items used to list generators for
@@ -564,7 +564,7 @@ save_SPACE_GROUP_GENERATOR
 
     loop_
       _category_key.name
-         '_space_group_generator.key'
+         '_space_group_generator.id'
          '_space_group_generator.space_group_id'
 
 save_
@@ -884,7 +884,7 @@ save_
 ;
        All multi-block items from core 3.2.0 added.
 ;
-         1.1.0                    2025-04-14
+         1.1.0                    2025-04-29
 ;
        # Update date above and add audit comments below. Remove
        this comment when ready for release.
@@ -900,6 +900,9 @@ save_
        Added _diffrn_radiation.diffrn_id as key for diffrn_radiation
        category.
 
-       Added AUDIT_DATASET
+       Added AUDIT_DATASET.
+
+       Renamed _space_group_generator.key to _space_group_generator.id
+       to reflect changes in the CIF_CORE dictionary.
 ;
 
