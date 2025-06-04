@@ -1075,7 +1075,11 @@ save_GEOM_TORSION
 
        Loop  m2  as  model_site  :j  {
 
-          If (i==j or m2.mole_index!=m1.mole_index) Next
+          If (m1.structure_id != m2.structure_id or
+              i==j or
+              m2.mole_index!=m1.mole_index)
+            Next
+
           v21 =  m1.Cartn_xyz - m2.Cartn_xyz
           d21 =  Norm (v21)
 
@@ -1084,7 +1088,13 @@ save_GEOM_TORSION
 
           Loop  m3  as  model_site  :k  {
 
-             If (k==i or k==j or m3.mole_index!=m2.mole_index) Next
+             If (m3.structure_id != m1.structure_id or
+                 m3.structure_id != m2.structure_id or
+                 k==i or
+                 k==j or
+                 m3.mole_index!=m2.mole_index)
+               Next
+
              v23 =  m3.Cartn_xyz - m2.Cartn_xyz
              d23 =  Norm (v23)
 
@@ -1093,7 +1103,15 @@ save_GEOM_TORSION
 
              Loop  m4  as  model_site  :l  {
 
-                If (l==k or l==j or l==i or m4.mole_index!=m3.mole_index) Next
+                If (m4.structure_id != m3.structure_id or
+                    m4.structure_id != m2.structure_id or
+                    m4.structure_id != m1.structure_id or
+                    l==k or
+                    l==j or
+                    l==i or
+                    m4.mole_index!=m3.mole_index)
+                  Next
+
                 v34 =  m4.Cartn_xyz - m3.Cartn_xyz
                 d34 =  Norm (v34)
 
@@ -1114,8 +1132,9 @@ save_GEOM_TORSION
                               .site_symmetry_2   = m2.symop,
                               .site_symmetry_3   = m3.symop,
                               .site_symmetry_4   = m4.symop,
-                              .distances =  List ( d21,d23,d34 ),
-                              .angle     =  angle )
+                              .distances         =  List ( d21,d23,d34 ),
+                              .angle             =  angle,
+                              .structure_id      =  m1.structure_id  )
     }   }   }    }
 ;
 
