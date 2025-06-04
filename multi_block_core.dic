@@ -1074,10 +1074,11 @@ save_GEOM_TORSION
     Loop  m1  as  model_site  :i  {
 
        rad1  =   m1.radius_bond + _geom.bond_distance_incr
+       strid =   m1.structure_id
 
        Loop  m2  as  model_site  :j  {
 
-          If (m1.structure_id != m2.structure_id or
+          If (m2.structure_id != strid or
               i==j or
               m2.mole_index!=m1.mole_index)
             Next
@@ -1090,8 +1091,7 @@ save_GEOM_TORSION
 
           Loop  m3  as  model_site  :k  {
 
-             If (m3.structure_id != m1.structure_id or
-                 m3.structure_id != m2.structure_id or
+             If (m3.structure_id != strid or
                  k==i or
                  k==j or
                  m3.mole_index!=m2.mole_index)
@@ -1105,9 +1105,7 @@ save_GEOM_TORSION
 
              Loop  m4  as  model_site  :l  {
 
-                If (m4.structure_id != m3.structure_id or
-                    m4.structure_id != m2.structure_id or
-                    m4.structure_id != m1.structure_id or
+                If (m4.structure_id != strid or
                     l==k or
                     l==j or
                     l==i or
@@ -1136,7 +1134,7 @@ save_GEOM_TORSION
                               .site_symmetry_4   = m4.symop,
                               .distances         =  List ( d21,d23,d34 ),
                               .angle             =  angle,
-                              .structure_id      =  m1.structure_id  )
+                              .structure_id      =  strid  )
     }   }   }    }
 ;
 
