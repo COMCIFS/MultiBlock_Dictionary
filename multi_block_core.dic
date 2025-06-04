@@ -787,7 +787,11 @@ save_GEOM_ANGLE
 
        Loop  m2  as  model_site  :j  {  # loop first target site
 
-          If (i==j or m1.mole_index != m2.mole_index) Next
+          If (m1.structure_id != m2.structure_id or
+              i==j or
+              m1.mole_index != m2.mole_index)
+            Next
+
           v1 =  m2.Cartn_xyz - m1.Cartn_xyz
           d1 =  Norm (v1)
 
@@ -797,7 +801,11 @@ save_GEOM_ANGLE
 
           Loop  m3  as  model_site  :k>j  {  # loop second target site
 
-             If (i==k or m1.mole_index != m3.mole_index) Next
+             If (m1.structure_id != m3.structure_id or
+                 i==k or
+                 m1.mole_index != m3.mole_index)
+               Next
+
              v2 =  m3.Cartn_xyz - m1.Cartn_xyz
              d2 =  Norm (v2)
 
@@ -808,11 +816,12 @@ save_GEOM_ANGLE
              geom_angle( .atom_site_label_1  = m2.label,
                          .atom_site_label_2  = m1.label,
                          .atom_site_label_3  = m3.label,
-                         .site_symmetry_1 = m2.symop,
-                         .site_symmetry_2 = m1.symop,
-                         .site_symmetry_3 = m3.symop,
-                         .distances =  List ( d1, d2 ),
-                         .value     =  angle )
+                         .site_symmetry_1    = m2.symop,
+                         .site_symmetry_2    = m1.symop,
+                         .site_symmetry_3    = m3.symop,
+                         .distances          = List ( d1, d2 ),
+                         .value              = angle,
+                         .structure_id       = m1.structure_id  )
     }   }   }
 ;
 
