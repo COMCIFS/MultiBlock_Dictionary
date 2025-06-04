@@ -10,7 +10,7 @@ data_MULTIBLOCK_DIC
     _dictionary.title             MULTIBLOCK_DIC
     _dictionary.class             Instance
     _dictionary.version           1.1.0
-    _dictionary.date              2025-04-29
+    _dictionary.date              2025-06-04
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/MultiBlock_Dictionary/main/multi_block_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -992,7 +992,7 @@ save_GEOM_TORSION
     _definition.id                GEOM_TORSION
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2021-06-29
+    _definition.update            2025-06-04
     _description.text
 ;
     The CATEGORY of data items used to specify the torsion angles in the
@@ -1304,7 +1304,7 @@ save_
 ;
        All multi-block items from core 3.2.0 added.
 ;
-         1.1.0                    2025-04-29
+         1.1.0                    2025-06-04
 ;
        # Update date above and add audit comments below. Remove
        this comment when ready for release.
@@ -1324,5 +1324,7 @@ save_
 
        Renamed _space_group_generator.key to _space_group_generator.id
        to reflect changes in the CIF_CORE dictionary.
+
+       Added GEOM_* categories with _structure.id child key data names.
 ;
 
