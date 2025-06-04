@@ -784,10 +784,11 @@ save_GEOM_ANGLE
     Loop  m1  as  model_site  :i  {   # loop vertex model site
 
        rad1  =   m1.radius_bond + _geom.bond_distance_incr
+       strid =   m1.structure_id
 
        Loop  m2  as  model_site  :j  {  # loop first target site
 
-          If (m1.structure_id != m2.structure_id or
+          If (m2.structure_id != strid or
               i==j or
               m1.mole_index != m2.mole_index)
             Next
@@ -801,7 +802,7 @@ save_GEOM_ANGLE
 
           Loop  m3  as  model_site  :k>j  {  # loop second target site
 
-             If (m1.structure_id != m3.structure_id or
+             If (m3.structure_id != strid or
                  i==k or
                  m1.mole_index != m3.mole_index)
                Next
@@ -821,7 +822,7 @@ save_GEOM_ANGLE
                          .site_symmetry_3    = m3.symop,
                          .distances          = List ( d1, d2 ),
                          .value              = angle,
-                         .structure_id       = m1.structure_id  )
+                         .structure_id       = strid  )
     }   }   }
 ;
 
