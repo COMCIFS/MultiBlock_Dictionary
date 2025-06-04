@@ -668,6 +668,44 @@ save_space_group_wyckoff.space_group_id
 
 save_
 
+save_MODEL
+
+    _definition.id                MODEL
+    _definition.scope             Category
+    _definition.class             Set
+    _definition.update            2025-06-04
+    _description.text
+;
+    Items in the MODEL Category specify data for the crystal structure
+    postulated and modelled from the atomic coordinates derived and
+    refined from the diffraction information. The structural model is
+    described principally in terms of the geometry of the 'connected'
+    atom sites and the crystal symmetry in which they reside.
+;
+    _name.category_id             CIF_CORE_HEAD
+    _name.object_id               MODEL
+    _category_key.name            '_model.structure_id'
+
+save_
+
+save_model.structure_id
+
+    _definition.id                '_model.structure_id'
+    _definition.update            2025-06-04
+    _description.text
+;
+    A code identifying the structure from which the model was derived.
+;
+    _name.category_id             model
+    _name.object_id               structure_id
+    _name.linked_item_id          '_structure.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
 save_GEOM
 
     _definition.id                GEOM
