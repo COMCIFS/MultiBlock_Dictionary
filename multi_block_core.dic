@@ -1126,6 +1126,113 @@ save_geom_torsion.structure_id
 
 save_
 
+save_MODEL_SITE
+
+    _definition.id                MODEL_SITE
+    _definition.scope             Category
+    _definition.class             Loop
+    _definition.update            2025-06-04
+    _description.text
+;
+    The CATEGORY of data items used to describe atomic sites and
+    connections in the proposed atomic model.
+;
+    _name.category_id             MODEL
+    _name.object_id               MODEL_SITE
+
+    loop_
+      _category_key.name
+         '_model_site.label'
+         '_model_site.structure_id'
+         '_model_site.symop'
+
+    _method.purpose               Evaluation
+    _method.expression
+;
+    atomlist  = List()
+    Loop  a  as  atom_site  {
+       axyz       =    a.fract_xyz
+       cxyz       =   _atom_sites_Cartn_transform.matrix * axyz
+       radb       =   _atom_type[a.type_symbol].radius_bond
+       radc       =   _atom_type[a.type_symbol].radius_contact
+       ls         =   List ( a.label, "1_555" )
+       atomlist ++=   [ls, axyz, cxyz, radb, radc, 0]
+    }
+
+    molelist  = List()
+    dmin     =  _geom.bond_distance_min
+    m        =  0
+    n        =  0
+
+    For [ls1,a1,c1,rb1,rc1,m1] in atomlist  {
+        If (m1 != 0) Next
+        m         +=  1
+        n         +=  1
+        molelist ++=  [ls1,a1,c1,rb1,rc1,n,m]
+        atomlist --=  [ls1,a1,c1,rb1,rc1,m]
+
+        Repeat  {
+            connect =  "no"
+
+            For [ls2,a2,c2,rb2,rc2,n2,m2] in molelist  {
+                If (m2 != m) Next
+
+                For [ls3,a3,c3,rb3,rc3,m3] in atomlist  {
+                    dmax  =  rb2 + rb3 + _geom.bond_distance_incr
+
+                    Loop  s  as  space_group_symop  :ns   {
+
+                        axyz      =   s.R * a3 + s.T
+                        tran      =   Closest (axyz, a2)
+                        bxyz      =   axyz + tran
+                        cxyz      =  _atom_sites_Cartn_transform.matrix *bxyz
+                        d         =   Norm (cxyz - c2)
+
+                       If (d > dmin and d < dmax)          {
+                           ls  =   List ( ls3[0], Symop(ns+1, tran) )
+
+                           If (ls not in Strip(molelist,0))    {
+                               n         +=  1
+                               molelist ++=  [ls,bxyz,cxyz,rb3,rc3,n,m]
+                               atomlist --=  [ls3,a3,c3,rb3,rc3,m]
+                               connect    =  "yes"
+        }   }   }   }   }
+       If (connect == "no") Break
+    }  }
+
+    For [ls,ax,cx,rb,rc,n,m] in molelist  {
+
+       model_site( .label              =  ls[0],
+                   .symop           =  ls[1],
+                   .fract_xyz       =  ax,
+                   .Cartn_xyz       =  cx,
+                   .radius_bond     =  rb,
+                   .radius_contact  =  rc,
+                   .index           =  n,
+                   .mole_index      =  m  )
+     }
+;
+
+save_
+
+save_model_site.structure_id
+
+    _definition.id                '_model_site.structure_id'
+    _definition.update            2025-06-04
+    _description.text
+;
+    A code identifying the structure from which the model was derived.
+;
+    _name.category_id             model_site
+    _name.object_id               structure_id
+    _name.linked_item_id          '_structure.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
 save_STRUCTURE
 
     _definition.id                STRUCTURE
