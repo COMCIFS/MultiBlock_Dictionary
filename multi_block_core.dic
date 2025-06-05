@@ -793,46 +793,6 @@ save_GEOM_ANGLE
          '_geom_angle.site_symmetry_2'
          '_geom_angle.site_symmetry_3'
 
-    _method.purpose               Evaluation
-    _method.expression
-;
-    dmin =  _geom.bond_distance_min
-
-    Loop  m1  as  model_site  :i  {   # loop vertex model site
-
-       rad1  =   m1.radius_bond + _geom.bond_distance_incr
-
-       Loop  m2  as  model_site  :j  {  # loop first target site
-
-          If (i==j or m1.mole_index != m2.mole_index) Next
-          v1 =  m2.Cartn_xyz - m1.Cartn_xyz
-          d1 =  Norm (v1)
-
-          If (d1<dmin or d1>(rad1+m2.radius_bond))  Next
-
-          rad2  =   m2.radius_bond + _geom.bond_distance_incr
-
-          Loop  m3  as  model_site  :k>j  {  # loop second target site
-
-             If (i==k or m1.mole_index != m3.mole_index) Next
-             v2 =  m3.Cartn_xyz - m1.Cartn_xyz
-             d2 =  Norm (v2)
-
-             If (d2<dmin or d2>(rad2+m3.radius_bond)) Next
-
-             angle =  Acosd ( v1*v2 / (d1*d2) )
-
-             geom_angle( .atom_site_label_1  = m2.label,
-                         .atom_site_label_2  = m1.label,
-                         .atom_site_label_3  = m3.label,
-                         .site_symmetry_1 = m2.symop,
-                         .site_symmetry_2 = m1.symop,
-                         .site_symmetry_3 = m3.symop,
-                         .distances =  List ( d1, d2 ),
-                         .value     =  angle )
-    }   }   }
-;
-
 save_
 
 save_geom_angle.model_id
@@ -875,31 +835,6 @@ save_GEOM_BOND
          '_geom_bond.site_symmetry_1'
          '_geom_bond.site_symmetry_2'
 
-    _method.purpose               Evaluation
-    _method.expression
-;
-    dmin =  _geom.bond_distance_min
-
-    Loop  m1  as  model_site  :i  {
-
-       rad   =   m1.radius_bond + _geom.bond_distance_incr
-
-       Loop  m2  as  model_site  :j  {
-
-          If (i==j or m1.mole_index != m2.mole_index) Next
-
-          d =  Norm (m1.Cartn_xyz - m2.Cartn_xyz)
-
-          If (d<dmin or d>(rad+m2.radius_bond)) Next
-
-          geom_bond( .atom_site_label_1        =  m1.label,
-                     .atom_site_label_2        =  m2.label,
-                     .site_symmetry_1          =  m1.symop,
-                     .site_symmetry_2          =  m2.symop,
-                     .distance  =  d  )
-     }   }
-;
-
 save_
 
 save_geom_bond.model_id
@@ -941,42 +876,6 @@ save_GEOM_CONTACT
          '_geom_contact.model_id'
          '_geom_contact.site_symmetry_1'
          '_geom_contact.site_symmetry_2'
-
-    _method.purpose               Evaluation
-    _method.expression
-;
-    Loop  m1  as  model_site  {
-
-       rb  =   m1.radius_bond    + _geom.bond_distance_incr
-       rc  =   m1.radius_contact + _geom.contact_distance_incr
-
-       Loop  m2  as  model_site  {
-
-          If (m2.symop != '1_555')  Next
-          radb  =   rb + m2.radius_bond
-          radc  =   rc + m2.radius_contact
-          label =   m2.label
-
-          Loop  s  as  space_group_symop  :ns   {
-
-             axyz      =   s.R * m2.fract_xyz + s.T
-
-             Do i = -2,2 { Do j = -2,2 { Do k = -2,2 { # cell translations
-
-                tran  =   List ([i,j,k])
-                bxyz  =   axyz + tran
-                cxyz  =  _atom_sites_Cartn_transform.matrix * bxyz
-                d     =   Norm (cxyz - m1.Cartn_xyz)
-
-                If (d < radb or d > radc) Next
-
-                geom_contact( .atom_site_label_1        =  m1.label,
-                              .site_symmetry_1          =  m1.symop,
-                              .atom_site_label_2        =  label,
-                              .site_symmetry_2          = Symop(ns+1,tran),
-                              .distance  =  d  )
-    }  }  }  }  }  }
-;
 
 save_
 
@@ -1068,61 +967,6 @@ save_GEOM_TORSION
          '_geom_torsion.site_symmetry_3'
          '_geom_torsion.site_symmetry_4'
 
-    _method.purpose               Evaluation
-    _method.expression
-;
-    dmin =  _geom.bond_distance_min
-
-    Loop  m1  as  model_site  :i  {
-
-       rad1  =   m1.radius_bond + _geom.bond_distance_incr
-
-       Loop  m2  as  model_site  :j  {
-
-          If (i==j or m2.mole_index!=m1.mole_index) Next
-          v21 =  m1.Cartn_xyz - m2.Cartn_xyz
-          d21 =  Norm (v21)
-
-          If (d21 < dmin or d21 > (rad1+m2.radius_bond)) Next
-          rad2  =   m2.radius_bond + _geom.bond_distance_incr
-
-          Loop  m3  as  model_site  :k  {
-
-             If (k==i or k==j or m3.mole_index!=m2.mole_index) Next
-             v23 =  m3.Cartn_xyz - m2.Cartn_xyz
-             d23 =  Norm (v23)
-
-             If (d23 < dmin or d23 > (rad2+m3.radius_bond)) Next
-             rad3  =   m3.radius_bond + _geom.bond_distance_incr
-
-             Loop  m4  as  model_site  :l  {
-
-                If (l==k or l==j or l==i or m4.mole_index!=m3.mole_index) Next
-                v34 =  m4.Cartn_xyz - m3.Cartn_xyz
-                d34 =  Norm (v34)
-
-                If (d34 < dmin or d34 > (rad3+m4.radius_bond)) Next
-
-                u1    =   v21 ^ v23
-                u2    =   v34 ^ v23
-
-                angle =  Acosd ( u1 * u2 / ( Norm(u1) * Norm(u2) ) )
-                If ( (u1^u2)*v23 < 0 ) angle = -angle
-
-                geom_torsion(
-                              .atom_site_label_1 = m1.label,
-                              .atom_site_label_2 = m2.label,
-                              .atom_site_label_3 = m3.label,
-                              .atom_site_label_4 = m4.label,
-                              .site_symmetry_1   = m1.symop,
-                              .site_symmetry_2   = m2.symop,
-                              .site_symmetry_3   = m3.symop,
-                              .site_symmetry_4   = m4.symop,
-                              .distances =  List ( d21,d23,d34 ),
-                              .angle     =  angle )
-    }   }   }    }
-;
-
 save_
 
 save_geom_torsion.model_id
@@ -1162,73 +1006,6 @@ save_MODEL_SITE
          '_model_site.label'
          '_model_site.model_id'
          '_model_site.symop'
-
-    _method.purpose               Evaluation
-    _method.expression
-;
-    atomlist  = List()
-    Loop  a  as  atom_site  {
-       axyz       =    a.fract_xyz
-       cxyz       =   _atom_sites_Cartn_transform.matrix * axyz
-       radb       =   _atom_type[a.type_symbol].radius_bond
-       radc       =   _atom_type[a.type_symbol].radius_contact
-       ls         =   List ( a.label, "1_555" )
-       atomlist ++=   [ls, axyz, cxyz, radb, radc, 0]
-    }
-
-    molelist  = List()
-    dmin     =  _geom.bond_distance_min
-    m        =  0
-    n        =  0
-
-    For [ls1,a1,c1,rb1,rc1,m1] in atomlist  {
-        If (m1 != 0) Next
-        m         +=  1
-        n         +=  1
-        molelist ++=  [ls1,a1,c1,rb1,rc1,n,m]
-        atomlist --=  [ls1,a1,c1,rb1,rc1,m]
-
-        Repeat  {
-            connect =  "no"
-
-            For [ls2,a2,c2,rb2,rc2,n2,m2] in molelist  {
-                If (m2 != m) Next
-
-                For [ls3,a3,c3,rb3,rc3,m3] in atomlist  {
-                    dmax  =  rb2 + rb3 + _geom.bond_distance_incr
-
-                    Loop  s  as  space_group_symop  :ns   {
-
-                        axyz      =   s.R * a3 + s.T
-                        tran      =   Closest (axyz, a2)
-                        bxyz      =   axyz + tran
-                        cxyz      =  _atom_sites_Cartn_transform.matrix *bxyz
-                        d         =   Norm (cxyz - c2)
-
-                       If (d > dmin and d < dmax)          {
-                           ls  =   List ( ls3[0], Symop(ns+1, tran) )
-
-                           If (ls not in Strip(molelist,0))    {
-                               n         +=  1
-                               molelist ++=  [ls,bxyz,cxyz,rb3,rc3,n,m]
-                               atomlist --=  [ls3,a3,c3,rb3,rc3,m]
-                               connect    =  "yes"
-        }   }   }   }   }
-       If (connect == "no") Break
-    }  }
-
-    For [ls,ax,cx,rb,rc,n,m] in molelist  {
-
-       model_site( .label              =  ls[0],
-                   .symop           =  ls[1],
-                   .fract_xyz       =  ax,
-                   .Cartn_xyz       =  cx,
-                   .radius_bond     =  rb,
-                   .radius_contact  =  rc,
-                   .index           =  n,
-                   .mole_index      =  m  )
-     }
-;
 
 save_
 
