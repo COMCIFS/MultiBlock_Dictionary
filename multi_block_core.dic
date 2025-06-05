@@ -249,8 +249,7 @@ save_diffrn.id
     _definition.update            2022-05-09
     _description.text
 ;
-    Unique identifier for a diffraction data set collected under
-    particular diffraction conditions.
+    Unique identifier for a set of particular diffraction conditions.
 ;
     _name.category_id             diffrn
     _name.object_id               id
