@@ -876,11 +876,10 @@ save_GEOM_BOND
     Loop  m1  as  model_site  :i  {
 
        rad   =   m1.radius_bond + _geom.bond_distance_incr
-       strid =   m1.structure_id
 
        Loop  m2  as  model_site  :j  {
 
-          If (m2.structure_id != strid or
+          If (m1.structure_id != m2.structure_id or
               i==j or
               m1.mole_index != m2.mole_index)
             Next
@@ -894,7 +893,7 @@ save_GEOM_BOND
                      .site_symmetry_1          =  m1.symop,
                      .site_symmetry_2          =  m2.symop,
                      .distance                 =  d,
-                     .structure_id             =  strid  )
+                     .structure_id             =  m1.structure_id  )
      }   }
 ;
 
