@@ -751,7 +751,7 @@ save_GEOM
 
 save_
 
-save_geom.structure_id
+save_geom.model_id
 
     _definition.id                '_geom.model_id'
     _definition.update            2025-06-04
@@ -1487,6 +1487,8 @@ save_
        Renamed _space_group_generator.key to _space_group_generator.id
        to reflect changes in the CIF_CORE dictionary.
 
-       Added GEOM_* categories with _structure.id child key data names.
+       Added _model.id as key to MODEL.
+
+       Added GEOM_* and MODEL_SITE categories with _model.id child key data names.
 ;
 
