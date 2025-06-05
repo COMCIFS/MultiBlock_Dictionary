@@ -878,10 +878,7 @@ save_GEOM_BOND
 
        Loop  m2  as  model_site  :j  {
 
-          If (m1.structure_id != m2.structure_id or
-              i==j or
-              m1.mole_index != m2.mole_index)
-            Next
+          If (i==j or m1.mole_index != m2.mole_index) Next
 
           d =  Norm (m1.Cartn_xyz - m2.Cartn_xyz)
 
@@ -891,8 +888,7 @@ save_GEOM_BOND
                      .atom_site_label_2        =  m2.label,
                      .site_symmetry_1          =  m1.symop,
                      .site_symmetry_2          =  m2.symop,
-                     .distance                 =  d,
-                     .structure_id             =  m1.structure_id  )
+                     .distance  =  d  )
      }   }
 ;
 
