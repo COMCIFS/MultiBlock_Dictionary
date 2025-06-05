@@ -684,7 +684,24 @@ save_MODEL
 ;
     _name.category_id             CIF_CORE_HEAD
     _name.object_id               MODEL
-    _category_key.name            '_model.structure_id'
+    _category_key.name            '_model.id'
+
+save_
+
+save_model.id
+
+    _definition.id                '_model.id'
+    _definition.update            2025-06-04
+    _description.text
+;
+    Arbitrary code identifying the model.
+;
+    _name.category_id             model
+    _name.object_id               id
+    _type.purpose                 Key
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
 
 save_
 
@@ -694,7 +711,7 @@ save_model.structure_id
     _definition.update            2025-06-04
     _description.text
 ;
-    A code identifying the structure from which the model was derived.
+    A code identifying the structure to which the model was applies.
 ;
     _name.category_id             model
     _name.object_id               structure_id
@@ -730,21 +747,21 @@ save_GEOM
 ;
     _name.category_id             MODEL
     _name.object_id               GEOM
-    _category_key.name            '_geom.structure_id'
+    _category_key.name            '_geom.model_id'
 
 save_
 
 save_geom.structure_id
 
-    _definition.id                '_geom.structure_id'
+    _definition.id                '_geom.model_id'
     _definition.update            2025-06-04
     _description.text
 ;
-    A code identifying the structure from which the geometry was derived.
+    A code identifying the model from which the geometry was derived.
 ;
     _name.category_id             geom
-    _name.object_id               structure_id
-    _name.linked_item_id          '_structure.id'
+    _name.object_id               model_id
+    _name.linked_item_id          '_model.id'
     _type.purpose                 Link
     _type.source                  Assigned
     _type.container               Single
@@ -771,10 +788,10 @@ save_GEOM_ANGLE
          '_geom_angle.atom_site_label_1'
          '_geom_angle.atom_site_label_2'
          '_geom_angle.atom_site_label_3'
+         '_geom_angle.model_id'
          '_geom_angle.site_symmetry_1'
          '_geom_angle.site_symmetry_2'
          '_geom_angle.site_symmetry_3'
-         '_geom_angle.structure_id'
 
     _method.purpose               Evaluation
     _method.expression
@@ -818,17 +835,17 @@ save_GEOM_ANGLE
 
 save_
 
-save_geom_angle.structure_id
+save_geom_angle.model_id
 
-    _definition.id                '_geom_angle.structure_id'
+    _definition.id                '_geom_angle.model_id'
     _definition.update            2025-06-04
     _description.text
 ;
-    A code identifying the structure from which the geometry was derived.
+    A code identifying the model from which the geometry was derived.
 ;
     _name.category_id             geom_angle
-    _name.object_id               structure_id
-    _name.linked_item_id          '_structure.id'
+    _name.object_id               model_id
+    _name.linked_item_id          '_model.id'
     _type.purpose                 Link
     _type.source                  Assigned
     _type.container               Single
@@ -854,9 +871,9 @@ save_GEOM_BOND
       _category_key.name
          '_geom_bond.atom_site_label_1'
          '_geom_bond.atom_site_label_2'
+         '_geom_bond.model_id'
          '_geom_bond.site_symmetry_1'
          '_geom_bond.site_symmetry_2'
-         '_geom_bond.structure_id'
 
     _method.purpose               Evaluation
     _method.expression
@@ -885,17 +902,17 @@ save_GEOM_BOND
 
 save_
 
-save_geom_bond.structure_id
+save_geom_bond.model_id
 
-    _definition.id                '_geom_bond.structure_id'
+    _definition.id                '_geom_bond.model_id'
     _definition.update            2025-06-04
     _description.text
 ;
-    A code identifying the structure from which the geometry was derived.
+    A code identifying the model from which the geometry was derived.
 ;
     _name.category_id             geom_bond
-    _name.object_id               structure_id
-    _name.linked_item_id          '_structure.id'
+    _name.object_id               model_id
+    _name.linked_item_id          '_model.id'
     _type.purpose                 Link
     _type.source                  Assigned
     _type.container               Single
@@ -921,9 +938,9 @@ save_GEOM_CONTACT
       _category_key.name
          '_geom_contact.atom_site_label_1'
          '_geom_contact.atom_site_label_2'
+         '_geom_contact.model_id'
          '_geom_contact.site_symmetry_1'
          '_geom_contact.site_symmetry_2'
-         '_geom_contact.structure_id'
 
     _method.purpose               Evaluation
     _method.expression
@@ -963,17 +980,17 @@ save_GEOM_CONTACT
 
 save_
 
-save_geom_contact.structure_id
+save_geom_contact.model_id
 
-    _definition.id                '_geom_contact.structure_id'
+    _definition.id                '_geom_contact.model_id'
     _definition.update            2025-06-04
     _description.text
 ;
-    A code identifying the structure from which the geometry was derived.
+    A code identifying the model from which the geometry was derived.
 ;
     _name.category_id             geom_contact
-    _name.object_id               structure_id
-    _name.linked_item_id          '_structure.id'
+    _name.object_id               model_id
+    _name.linked_item_id          '_model.id'
     _type.purpose                 Link
     _type.source                  Assigned
     _type.container               Single
@@ -1000,24 +1017,24 @@ save_GEOM_HBOND
          '_geom_hbond.atom_site_label_D'
          '_geom_hbond.atom_site_label_H'
          '_geom_hbond.atom_site_label_A'
+         '_geom_hbond.model_id'
          '_geom_hbond.site_symmetry_D'
          '_geom_hbond.site_symmetry_H'
          '_geom_hbond.site_symmetry_A'
-         '_geom_hbond.structure_id'
 
 save_
 
-save_geom_hbond.structure_id
+save_geom_hbond.model_id
 
-    _definition.id                '_geom_hbond.structure_id'
+    _definition.id                '_geom_hbond.model_id'
     _definition.update            2025-06-04
     _description.text
 ;
-    A code identifying the structure from which the geometry was derived.
+    A code identifying the model from which the geometry was derived.
 ;
     _name.category_id             geom_hbond
-    _name.object_id               structure_id
-    _name.linked_item_id          '_structure.id'
+    _name.object_id               model_id
+    _name.linked_item_id          '_model.id'
     _type.purpose                 Link
     _type.source                  Assigned
     _type.container               Single
@@ -1045,11 +1062,11 @@ save_GEOM_TORSION
          '_geom_torsion.atom_site_label_2'
          '_geom_torsion.atom_site_label_3'
          '_geom_torsion.atom_site_label_4'
+         '_geom_torsion.model_id'
          '_geom_torsion.site_symmetry_1'
          '_geom_torsion.site_symmetry_2'
          '_geom_torsion.site_symmetry_3'
          '_geom_torsion.site_symmetry_4'
-         '_geom_torsion.structure_id'
 
     _method.purpose               Evaluation
     _method.expression
@@ -1108,17 +1125,17 @@ save_GEOM_TORSION
 
 save_
 
-save_geom_torsion.structure_id
+save_geom_torsion.model_id
 
-    _definition.id                '_geom_torsion.structure_id'
+    _definition.id                '_geom_torsion.model_id'
     _definition.update            2025-06-04
     _description.text
 ;
-    A code identifying the structure from which the geometry was derived.
+    A code identifying the model from which the geometry was derived.
 ;
     _name.category_id             geom_torsion
-    _name.object_id               structure_id
-    _name.linked_item_id          '_structure.id'
+    _name.object_id               model_id
+    _name.linked_item_id          '_model.id'
     _type.purpose                 Link
     _type.source                  Assigned
     _type.container               Single
@@ -1143,7 +1160,7 @@ save_MODEL_SITE
     loop_
       _category_key.name
          '_model_site.label'
-         '_model_site.structure_id'
+         '_model_site.model_id'
          '_model_site.symop'
 
     _method.purpose               Evaluation
@@ -1215,17 +1232,17 @@ save_MODEL_SITE
 
 save_
 
-save_model_site.structure_id
+save_model_site.model_id
 
-    _definition.id                '_model_site.structure_id'
+    _definition.id                '_model_site.model_id'
     _definition.update            2025-06-04
     _description.text
 ;
-    A code identifying the structure from which the model was derived.
+    A code identifying the model from which the model site was derived.
 ;
     _name.category_id             model_site
-    _name.object_id               structure_id
-    _name.linked_item_id          '_structure.id'
+    _name.object_id               model_id
+    _name.linked_item_id          '_model.id'
     _type.purpose                 Link
     _type.source                  Assigned
     _type.container               Single
