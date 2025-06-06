@@ -243,6 +243,26 @@ save_diffrn.crystal_id
 
 save_
 
+save_diffrn.diffrn_radiation_id
+
+    _definition.id                '_diffrn.diffrn_radiation_id'
+    _definition.update            2024-11-12
+    _description.text
+;
+    Identifies the characteristics of the radiation source
+    for the diffraction data. This is a pointer to
+    _diffrn_radiation.id.
+;
+    _name.category_id             diffrn
+    _name.object_id               diffrn_radiation_id
+    _name.linked_item_id          '_diffrn_radiation.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
 save_diffrn.id
 
     _definition.id                '_diffrn.id'
@@ -265,7 +285,7 @@ save_DIFFRN_RADIATION
     _definition.id                DIFFRN_RADIATION
     _definition.scope             Category
     _definition.class             Set
-    _definition.update            2024-10-17
+    _definition.update            2024-11-12
     _description.text
 ;
     The CATEGORY of data items which specify the wavelength of the
@@ -275,23 +295,62 @@ save_DIFFRN_RADIATION
 ;
     _name.category_id             DIFFRACTION
     _name.object_id               DIFFRN_RADIATION
-    _category_key.name            '_diffrn_radiation.diffrn_id'
+    _category_key.name            '_diffrn_radiation.id'
 
 save_
 
-save_diffrn_radiation.diffrn_id
+save_diffrn_radiation.id
 
-    _definition.id                '_diffrn_radiation.diffrn_id'
-    _definition.update            2024-10-17
+    _definition.id                '_diffrn_radiation.id'
+    _definition_replaced.by       .
+    _definition.update            2024-11-15
     _description.text
 ;
-    Unique identifier for a diffraction data set collected under
-    particular diffraction conditions. This item is a pointer to
-    _diffrn.id.
+    Unique identifier for a radiation source description.
 ;
     _name.category_id             diffrn_radiation
-    _name.object_id               diffrn_id
-    _name.linked_item_id          '_diffrn.id'
+    _name.object_id               id
+    _type.purpose                 Key
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
+save_DIFFRN_RADIATION_WAVELENGTH
+
+    _definition.id                DIFFRN_RADIATION_WAVELENGTH
+    _definition.scope             Category
+    _definition.class             Loop
+    _definition.update            2024-11-12
+    _description.text
+;
+    The CATEGORY of data items which specify the wavelength of the
+    radiation used in measuring diffraction intensities. Items may be
+    looped to identify and assign weights to distinct wavelength
+    components from a polychromatic beam.
+;
+    _name.category_id             DIFFRN_RADIATION
+    _name.object_id               DIFFRN_RADIATION_WAVELENGTH
+    loop_
+      _category_key.name
+         '_diffrn_radiation_wavelength.id'
+         '_diffrn_radiation_wavelength.radiation_id'
+
+save_
+
+save_diffrn_radiation_wavelength.radiation_id
+
+    _definition.id                '_diffrn_radiation_wavelength.radiation_id'
+    _definition.update            2024-11-12
+    _description.text
+;
+    Code identifying the radiation description to which this wavelength
+    relates.
+;
+    _name.category_id             diffrn_radiation_wavelength
+    _name.object_id               radiation_id
+    _name.linked_item_id          '_diffrn_radiation.id'
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
