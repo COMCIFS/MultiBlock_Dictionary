@@ -10,7 +10,7 @@ data_MULTIBLOCK_DIC
     _dictionary.title             MULTIBLOCK_DIC
     _dictionary.class             Instance
     _dictionary.version           1.1.0
-    _dictionary.date              2025-04-29
+    _dictionary.date              2025-06-04
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/MultiBlock_Dictionary/main/multi_block_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -726,6 +726,365 @@ save_space_group_wyckoff.space_group_id
 
 save_
 
+save_MODEL
+
+    _definition.id                MODEL
+    _definition.scope             Category
+    _definition.class             Set
+    _definition.update            2025-06-04
+    _description.text
+;
+    Items in the MODEL Category specify data for the crystal structure
+    postulated and modelled from the atomic coordinates derived and
+    refined from the diffraction information. The structural model is
+    described principally in terms of the geometry of the 'connected'
+    atom sites and the crystal symmetry in which they reside.
+;
+    _name.category_id             CIF_CORE_HEAD
+    _name.object_id               MODEL
+    _category_key.name            '_model.id'
+
+save_
+
+save_model.id
+
+    _definition.id                '_model.id'
+    _definition.update            2025-06-04
+    _description.text
+;
+    Arbitrary code identifying the model.
+;
+    _name.category_id             model
+    _name.object_id               id
+    _type.purpose                 Key
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
+save_model.structure_id
+
+    _definition.id                '_model.structure_id'
+    _definition.update            2025-06-04
+    _description.text
+;
+    A code identifying the structure to which the model was applied.
+;
+    _name.category_id             model
+    _name.object_id               structure_id
+    _name.linked_item_id          '_structure.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
+save_GEOM
+
+    _definition.id                GEOM
+    _definition.scope             Category
+    _definition.class             Set
+    _definition.update            2025-06-04
+    _description.text
+;
+    The CATEGORY of data items used to specify the geometry
+    of the structural model as derived from the atomic sites.
+    The geometry is expressed in terms of the interatomic
+    angles (GEOM_ANGLE data), covalent bond distances
+    (GEOM_BOND data), contact distances (GEOM_CONTACT data),
+    hydrogen bonds (GEOM_HBOND data) and torsion geometry
+    (GEOM_TORSION data).
+    Geometry data are usually redundant, in that they can be
+    calculated from other more fundamental quantities in the data
+    block. However, they serve the dual purposes of providing a
+    check on the correctness of both sets of data and of enabling
+    the most important geometric data to be identified for
+    publication by setting the appropriate publication flag.
+;
+    _name.category_id             MODEL
+    _name.object_id               GEOM
+    _category_key.name            '_geom.model_id'
+
+save_
+
+save_geom.model_id
+
+    _definition.id                '_geom.model_id'
+    _definition.update            2025-06-04
+    _description.text
+;
+    A code identifying the model to which the geometry relates.
+;
+    _name.category_id             geom
+    _name.object_id               model_id
+    _name.linked_item_id          '_model.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
+save_GEOM_ANGLE
+
+    _definition.id                GEOM_ANGLE
+    _definition.scope             Category
+    _definition.class             Loop
+    _definition.update            2025-06-04
+    _description.text
+;
+    The CATEGORY of data items used to specify the geometry angles in the
+    structural model as derived from the atomic sites.
+;
+    _name.category_id             GEOM
+    _name.object_id               GEOM_ANGLE
+
+    loop_
+      _category_key.name
+         '_geom_angle.atom_site_label_1'
+         '_geom_angle.atom_site_label_2'
+         '_geom_angle.atom_site_label_3'
+         '_geom_angle.model_id'
+         '_geom_angle.site_symmetry_1'
+         '_geom_angle.site_symmetry_2'
+         '_geom_angle.site_symmetry_3'
+
+save_
+
+save_geom_angle.model_id
+
+    _definition.id                '_geom_angle.model_id'
+    _definition.update            2025-06-04
+    _description.text
+;
+    A code identifying the model to which the geometry relates.
+;
+    _name.category_id             geom_angle
+    _name.object_id               model_id
+    _name.linked_item_id          '_model.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
+save_GEOM_BOND
+
+    _definition.id                GEOM_BOND
+    _definition.scope             Category
+    _definition.class             Loop
+    _definition.update            2025-06-04
+    _description.text
+;
+    The CATEGORY of data items used to specify the geometry bonds in the
+    structural model as derived from the atomic sites.
+;
+    _name.category_id             GEOM
+    _name.object_id               GEOM_BOND
+
+    loop_
+      _category_key.name
+         '_geom_bond.atom_site_label_1'
+         '_geom_bond.atom_site_label_2'
+         '_geom_bond.model_id'
+         '_geom_bond.site_symmetry_1'
+         '_geom_bond.site_symmetry_2'
+
+save_
+
+save_geom_bond.model_id
+
+    _definition.id                '_geom_bond.model_id'
+    _definition.update            2025-06-04
+    _description.text
+;
+    A code identifying the model to which the geometry relates.
+;
+    _name.category_id             geom_bond
+    _name.object_id               model_id
+    _name.linked_item_id          '_model.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
+save_GEOM_CONTACT
+
+    _definition.id                GEOM_CONTACT
+    _definition.scope             Category
+    _definition.class             Loop
+    _definition.update            2025-06-04
+    _description.text
+;
+    The CATEGORY of data items used to specify the interatomic
+    contact distances in the structural model.
+;
+    _name.category_id             GEOM
+    _name.object_id               GEOM_CONTACT
+
+    loop_
+      _category_key.name
+         '_geom_contact.atom_site_label_1'
+         '_geom_contact.atom_site_label_2'
+         '_geom_contact.model_id'
+         '_geom_contact.site_symmetry_1'
+         '_geom_contact.site_symmetry_2'
+
+save_
+
+save_geom_contact.model_id
+
+    _definition.id                '_geom_contact.model_id'
+    _definition.update            2025-06-04
+    _description.text
+;
+    A code identifying the model to which the geometry relates.
+;
+    _name.category_id             geom_contact
+    _name.object_id               model_id
+    _name.linked_item_id          '_model.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
+save_GEOM_HBOND
+
+    _definition.id                GEOM_HBOND
+    _definition.scope             Category
+    _definition.class             Loop
+    _definition.update            2025-06-04
+    _description.text
+;
+    The CATEGORY of data items used to specify the hydrogen bond
+    distances in the structural model as derived from atomic sites.
+;
+    _name.category_id             GEOM
+    _name.object_id               GEOM_HBOND
+
+    loop_
+      _category_key.name
+         '_geom_hbond.atom_site_label_D'
+         '_geom_hbond.atom_site_label_H'
+         '_geom_hbond.atom_site_label_A'
+         '_geom_hbond.model_id'
+         '_geom_hbond.site_symmetry_D'
+         '_geom_hbond.site_symmetry_H'
+         '_geom_hbond.site_symmetry_A'
+
+save_
+
+save_geom_hbond.model_id
+
+    _definition.id                '_geom_hbond.model_id'
+    _definition.update            2025-06-04
+    _description.text
+;
+    A code identifying the model to which the geometry relates.
+;
+    _name.category_id             geom_hbond
+    _name.object_id               model_id
+    _name.linked_item_id          '_model.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
+save_GEOM_TORSION
+
+    _definition.id                GEOM_TORSION
+    _definition.scope             Category
+    _definition.class             Loop
+    _definition.update            2025-06-04
+    _description.text
+;
+    The CATEGORY of data items used to specify the torsion angles in the
+    structural model as derived from the atomic sites.
+;
+    _name.category_id             GEOM
+    _name.object_id               GEOM_TORSION
+
+    loop_
+      _category_key.name
+         '_geom_torsion.atom_site_label_1'
+         '_geom_torsion.atom_site_label_2'
+         '_geom_torsion.atom_site_label_3'
+         '_geom_torsion.atom_site_label_4'
+         '_geom_torsion.model_id'
+         '_geom_torsion.site_symmetry_1'
+         '_geom_torsion.site_symmetry_2'
+         '_geom_torsion.site_symmetry_3'
+         '_geom_torsion.site_symmetry_4'
+
+save_
+
+save_geom_torsion.model_id
+
+    _definition.id                '_geom_torsion.model_id'
+    _definition.update            2025-06-04
+    _description.text
+;
+    A code identifying the model to which the geometry relates.
+;
+    _name.category_id             geom_torsion
+    _name.object_id               model_id
+    _name.linked_item_id          '_model.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
+save_MODEL_SITE
+
+    _definition.id                MODEL_SITE
+    _definition.scope             Category
+    _definition.class             Loop
+    _definition.update            2025-06-04
+    _description.text
+;
+    The CATEGORY of data items used to describe atomic sites and
+    connections in the proposed atomic model.
+;
+    _name.category_id             MODEL
+    _name.object_id               MODEL_SITE
+
+    loop_
+      _category_key.name
+         '_model_site.label'
+         '_model_site.model_id'
+         '_model_site.symop'
+
+save_
+
+save_model_site.model_id
+
+    _definition.id                '_model_site.model_id'
+    _definition.update            2025-06-04
+    _description.text
+;
+    A code identifying the model to which the model site belongs.
+;
+    _name.category_id             model_site
+    _name.object_id               model_id
+    _name.linked_item_id          '_model.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
 save_STRUCTURE
 
     _definition.id                STRUCTURE
@@ -942,7 +1301,7 @@ save_
 ;
        All multi-block items from core 3.2.0 added.
 ;
-         1.1.0                    2025-04-29
+         1.1.0                    2025-06-04
 ;
        # Update date above and add audit comments below. Remove
        this comment when ready for release.
@@ -962,5 +1321,9 @@ save_
 
        Renamed _space_group_generator.key to _space_group_generator.id
        to reflect changes in the CIF_CORE dictionary.
+
+       Added _model.id as key to MODEL.
+
+       Added GEOM_* and MODEL_SITE categories with _model.id child key data names.
 ;
 
