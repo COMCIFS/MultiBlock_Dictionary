@@ -711,7 +711,7 @@ save_model.structure_id
     _definition.update            2025-06-04
     _description.text
 ;
-    A code identifying the structure to which the model was applies.
+    A code identifying the structure to which the model was applied.
 ;
     _name.category_id             model
     _name.object_id               structure_id
@@ -757,7 +757,7 @@ save_geom.model_id
     _definition.update            2025-06-04
     _description.text
 ;
-    A code identifying the model from which the geometry was derived.
+    A code identifying the model to which the geometry relates.
 ;
     _name.category_id             geom
     _name.object_id               model_id
@@ -801,7 +801,7 @@ save_geom_angle.model_id
     _definition.update            2025-06-04
     _description.text
 ;
-    A code identifying the model from which the geometry was derived.
+    A code identifying the model to which the geometry relates.
 ;
     _name.category_id             geom_angle
     _name.object_id               model_id
@@ -843,7 +843,7 @@ save_geom_bond.model_id
     _definition.update            2025-06-04
     _description.text
 ;
-    A code identifying the model from which the geometry was derived.
+    A code identifying the model to which the geometry relates.
 ;
     _name.category_id             geom_bond
     _name.object_id               model_id
@@ -885,7 +885,7 @@ save_geom_contact.model_id
     _definition.update            2025-06-04
     _description.text
 ;
-    A code identifying the model from which the geometry was derived.
+    A code identifying the model to which the geometry relates.
 ;
     _name.category_id             geom_contact
     _name.object_id               model_id
@@ -929,7 +929,7 @@ save_geom_hbond.model_id
     _definition.update            2025-06-04
     _description.text
 ;
-    A code identifying the model from which the geometry was derived.
+    A code identifying the model to which the geometry relates.
 ;
     _name.category_id             geom_hbond
     _name.object_id               model_id
@@ -975,7 +975,7 @@ save_geom_torsion.model_id
     _definition.update            2025-06-04
     _description.text
 ;
-    A code identifying the model from which the geometry was derived.
+    A code identifying the model to which the geometry relates.
 ;
     _name.category_id             geom_torsion
     _name.object_id               model_id
@@ -1015,7 +1015,7 @@ save_model_site.model_id
     _definition.update            2025-06-04
     _description.text
 ;
-    A code identifying the model from which the model site was derived.
+    A code identifying the model to which the model site belongs.
 ;
     _name.category_id             model_site
     _name.object_id               model_id
