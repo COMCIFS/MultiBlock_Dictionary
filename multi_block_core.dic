@@ -371,18 +371,17 @@ save_DIFFRN_SOURCE
 ;
     _name.category_id             DIFFRN
     _name.object_id               DIFFRN_SOURCE
-    _category_key.name            '_diffrn_source.radiation.id'
+    _category_key.name            '_diffrn_source.radiation_id'
 
 save_
 
 save_diffrn_source.radiation_id
 
-    _definition.id                '_diffrn.radiation_id'
+    _definition.id                '_diffrn_source.radiation_id'
     _definition.update            2025-06-18
     _description.text
 ;
-    Identifies the characteristics of the radiation source
-    for which the radiation source information relates.
+    Identifies the characteristics of the radiation source.
     This is a pointer to _diffrn_radiation.id.
 ;
     _name.category_id             diffrn_source
