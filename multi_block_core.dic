@@ -302,7 +302,6 @@ save_
 save_diffrn_radiation.id
 
     _definition.id                '_diffrn_radiation.id'
-    _definition_replaced.by       .
     _definition.update            2024-11-15
     _description.text
 ;
