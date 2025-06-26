@@ -10,7 +10,7 @@ data_MULTIBLOCK_DIC
     _dictionary.title             MULTIBLOCK_DIC
     _dictionary.class             Instance
     _dictionary.version           1.1.0
-    _dictionary.date              2025-06-18
+    _dictionary.date              2025-06-26
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/MultiBlock_Dictionary/main/multi_block_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -272,6 +272,40 @@ save_diffrn.id
     Unique identifier for a set of particular diffraction conditions.
 ;
     _name.category_id             diffrn
+    _name.object_id               id
+    _type.purpose                 Key
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
+save_DIFFRN_DETECTOR
+
+    _definition.id                DIFFRN_DETECTOR
+    _definition.scope             Category
+    _definition.class             Set
+    _definition.update            2025-06-26
+    _description.text
+;
+    The category of data items which specify the detectors used
+    in the measurement of diffraction intensities.
+;
+    _name.category_id             DIFFRN
+    _name.object_id               DIFFRN_DETECTOR
+    _category_key.name            '_diffrn_detector.id'
+
+save_
+
+save_diffrn_detector.id
+
+    _definition.id                '_diffrn_detector.id'
+    _definition.update            2025-06-26
+    _description.text
+;
+    Unique identifier for a detector description.
+;
+    _name.category_id             diffrn_detector
     _name.object_id               id
     _type.purpose                 Key
     _type.source                  Assigned
@@ -1336,7 +1370,7 @@ save_
 ;
        All multi-block items from core 3.2.0 added.
 ;
-         1.1.0                    2025-06-18
+         1.1.0                    2025-06-26
 ;
        # Update date above and add audit comments below. Remove
        this comment when ready for release.
@@ -1362,5 +1396,7 @@ save_
        Added GEOM_* and MODEL_SITE categories with _model.id child key data names.
 
        Add DIFFRN_SOURCE category with _diffrn_source.radiation_id key data name.
+
+       Add DIFFRN_DETECTOR category with _diffrn_detector.id key data name.
 ;
 
