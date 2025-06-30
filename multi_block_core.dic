@@ -354,6 +354,27 @@ save_DIFFRN_RADIATION
 
 save_
 
+save_diffrn_radiation.diffrn_id
+
+    _definition.id                'diffrn_radiation.diffrn_id'
+    _definition.update            2025-06-30
+    _description.text
+;
+    Code identifying the _diffrn.id to which this radiation description
+    relates.
+
+    Exists to maintain compatibility with current imgCIF definitions.
+;
+    _name.category_id             diffrn_radiation
+    _name.object_id               diffrn_id
+    _name.linked_item_id          '_diffrn.id'
+    _type.purpose                 Link
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
 save_diffrn_radiation.id
 
     _definition.id                '_diffrn_radiation.id'
