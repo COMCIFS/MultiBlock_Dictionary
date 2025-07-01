@@ -344,7 +344,7 @@ save_DIFFRN_RADIATION
     _definition.id                DIFFRN_RADIATION
     _definition.scope             Category
     _definition.class             Set
-    _definition.update            2024-11-12
+    _definition.update            2025-07-01
     _description.text
 ;
     The CATEGORY of data items which specify the wavelength of the
@@ -354,7 +354,11 @@ save_DIFFRN_RADIATION
 ;
     _name.category_id             DIFFRACTION
     _name.object_id               DIFFRN_RADIATION
-    _category_key.name            '_diffrn_radiation.id'
+
+    loop_
+      _category_key.name
+         '_diffrn_radiation.diffrn_id'
+         '_diffrn_radiation.id'
 
 save_
 
