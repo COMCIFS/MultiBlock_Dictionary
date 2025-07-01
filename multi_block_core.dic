@@ -285,7 +285,7 @@ save_DIFFRN_DETECTOR
     _definition.id                DIFFRN_DETECTOR
     _definition.scope             Category
     _definition.class             Set
-    _definition.update            2025-06-26
+    _definition.update            2025-06-30
     _description.text
 ;
     The category of data items which specify the detectors used
@@ -293,7 +293,11 @@ save_DIFFRN_DETECTOR
 ;
     _name.category_id             DIFFRN
     _name.object_id               DIFFRN_DETECTOR
-    _category_key.name            '_diffrn_detector.id'
+
+    loop_
+      _category_key.name
+         '_diffrn_detector.diffrn_id'
+         '_diffrn_detector.id'
 
 save_
 
