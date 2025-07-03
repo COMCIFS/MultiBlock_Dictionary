@@ -1447,8 +1447,7 @@ save_
         _diffrn_detector.diffrn_id key data names. Included
         _diffrn_detector.diffrn_id to maintain compatibility with imgCIF.
 
-       Add DIFFRN_RADIATION category with _diffrn_radiation.id and
-        _diffrn_radiation.diffrn_id key data names. Included
+       Add DIFFRN_RADIATION category with _diffrn_radiation.id as key. Included
         _diffrn_radiation.diffrn_id to maintain compatibility with imgCIF.
 ;
 
