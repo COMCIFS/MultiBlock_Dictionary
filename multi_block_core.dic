@@ -10,7 +10,7 @@ data_MULTIBLOCK_DIC
     _dictionary.title             MULTIBLOCK_DIC
     _dictionary.class             Instance
     _dictionary.version           1.1.0
-    _dictionary.date              2025-06-18
+    _dictionary.date              2025-07-01
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/MultiBlock_Dictionary/main/multi_block_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -280,6 +280,65 @@ save_diffrn.id
 
 save_
 
+save_DIFFRN_DETECTOR
+
+    _definition.id                DIFFRN_DETECTOR
+    _definition.scope             Category
+    _definition.class             Set
+    _definition.update            2025-06-30
+    _description.text
+;
+    The category of data items which specify the detectors used
+    in the measurement of diffraction intensities.
+;
+    _name.category_id             DIFFRN
+    _name.object_id               DIFFRN_DETECTOR
+
+    loop_
+      _category_key.name
+         '_diffrn_detector.diffrn_id'
+         '_diffrn_detector.id'
+
+save_
+
+save_diffrn_detector.diffrn_id
+
+    _definition.id                'diffrn_detector.diffrn_id'
+    _definition.update            2025-06-30
+    _description.text
+;
+    Code identifying the _diffrn.id to which this detector
+    relates.
+
+    Exists to maintain compatibility with current imgCIF definitions.
+;
+    _name.category_id             diffrn_detector
+    _name.object_id               diffrn_id
+    _name.linked_item_id          '_diffrn.id'
+    _type.purpose                 Link
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Word
+
+save_
+
+save_diffrn_detector.id
+
+    _definition.id                '_diffrn_detector.id'
+    _definition.update            2025-06-26
+    _description.text
+;
+    Unique identifier for a detector description.
+;
+    _name.category_id             diffrn_detector
+    _name.object_id               id
+    _type.purpose                 Key
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Text
+
+save_
+
 save_DIFFRN_RADIATION
 
     _definition.id                DIFFRN_RADIATION
@@ -296,6 +355,27 @@ save_DIFFRN_RADIATION
     _name.category_id             DIFFRACTION
     _name.object_id               DIFFRN_RADIATION
     _category_key.name            '_diffrn_radiation.id'
+
+save_
+
+save_diffrn_radiation.diffrn_id
+
+    _definition.id                'diffrn_radiation.diffrn_id'
+    _definition.update            2025-06-30
+    _description.text
+;
+    Code identifying the _diffrn.id to which this radiation description
+    relates.
+
+    Exists to maintain compatibility with current imgCIF definitions.
+;
+    _name.category_id             diffrn_radiation
+    _name.object_id               diffrn_id
+    _name.linked_item_id          '_diffrn.id'
+    _type.purpose                 Link
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Word
 
 save_
 
@@ -1336,7 +1416,7 @@ save_
 ;
        All multi-block items from core 3.2.0 added.
 ;
-         1.1.0                    2025-06-18
+         1.1.0                    2025-07-01
 ;
        # Update date above and add audit comments below. Remove
        this comment when ready for release.
@@ -1362,5 +1442,12 @@ save_
        Added GEOM_* and MODEL_SITE categories with _model.id child key data names.
 
        Add DIFFRN_SOURCE category with _diffrn_source.radiation_id key data name.
+
+       Add DIFFRN_DETECTOR category with _diffrn_detector.id and
+        _diffrn_detector.diffrn_id key data names. Included
+        _diffrn_detector.diffrn_id to maintain compatibility with imgCIF.
+
+       Add DIFFRN_RADIATION category with _diffrn_radiation.id as key. Included
+        _diffrn_radiation.diffrn_id to maintain compatibility with imgCIF.
 ;
 
