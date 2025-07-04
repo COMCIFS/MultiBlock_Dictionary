@@ -303,7 +303,7 @@ save_
 
 save_diffrn_detector.diffrn_id
 
-    _definition.id                'diffrn_detector.diffrn_id'
+    _definition.id                '_diffrn_detector.diffrn_id'
     _definition.update            2025-06-30
     _description.text
 ;
