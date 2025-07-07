@@ -10,7 +10,7 @@ data_MULTIBLOCK_DIC
     _dictionary.title             MULTIBLOCK_DIC
     _dictionary.class             Instance
     _dictionary.version           1.1.0
-    _dictionary.date              2025-07-01
+    _dictionary.date              2025-07-07
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/MultiBlock_Dictionary/main/multi_block_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -846,7 +846,7 @@ save_MODEL
     _definition.id                MODEL
     _definition.scope             Category
     _definition.class             Set
-    _definition.update            2025-06-04
+    _definition.update            2025-07-07
     _description.text
 ;
     Items in the MODEL Category specify data for the crystal structure
@@ -855,7 +855,7 @@ save_MODEL
     described principally in terms of the geometry of the 'connected'
     atom sites and the crystal symmetry in which they reside.
 ;
-    _name.category_id             CIF_CORE_HEAD
+    _name.category_id             MULTIBLOCK_CORE
     _name.object_id               MODEL
     _category_key.name            '_model.id'
 
@@ -1416,7 +1416,7 @@ save_
 ;
        All multi-block items from core 3.2.0 added.
 ;
-         1.1.0                    2025-07-01
+         1.1.0                    2025-07-07
 ;
        # Update date above and add audit comments below. Remove
        this comment when ready for release.
