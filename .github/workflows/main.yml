@@ -1,9 +1,9 @@
-# Check that syntax is correct
+# Check the syntax, semantics and layout of DDLm dictionaries
 
 name: CIFSyntaxandStyleCheck
 
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
+# Controls when the action will run. Triggers the workflow on push or pull
+# request events but only for the main branch
 on:
   push:
     branches: [ main ]
@@ -26,11 +26,11 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: checkout
+      - name: Checkout
         uses: actions/checkout@v2
 
       # Check syntax of all CIF files
-      - name: check_syntax
+      - name: Check CIF syntax
         uses: COMCIFS/cif_syntax_check_action@master
         id: cif_syntax_check
 
@@ -40,10 +40,10 @@ jobs:
     needs: syntax
 
     steps:
-      - name: checkout
+      - name: Checkout
         uses: actions/checkout@v2
 
-      - name: check_ddlm
+      - name: Run dictionary validity checks
         uses: COMCIFS/dictionary_check_action@main
         id: ddlm_check
 
@@ -70,30 +70,30 @@ jobs:
         run: |
           julia -e 'import Pkg;Pkg.add("CrystalInfoFramework");Pkg.add("Lerche");Pkg.add("FilePaths");Pkg.add("ArgParse")'
 
-      - name: checkout
+      - name: Checkout
         uses: actions/checkout@v2
         with:
           path: main
 
-      - name: checkout julia tools
+      - name: Checkout julia tools
         uses: actions/checkout@v2
         with:
           repository: jamesrhester/julia_cif_tools
           path: julia_cif_tools
 
-      - name: Checkout CIF master files
+      - name: Checkout the coreCIF dictionary
         uses: actions/checkout@v2
         with:
           repository: COMCIFS/cif_core
           path: cif_core
 
-      - name: Diagnostics
+      - name: Run diagnostics
         run: |
           ls -a
           pwd
           which julia
 
-      - name: one_dict_layout
+      - name: Run dictionary layout checks
         run: |
           julia -e 'using Pkg; Pkg.status()'
           for file in main/*.dic
