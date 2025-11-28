@@ -27,7 +27,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       # Check syntax of all CIF files
       - name: Check CIF syntax
@@ -41,7 +41,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Run dictionary validity checks
         uses: COMCIFS/dictionary_check_action@main
@@ -54,7 +54,7 @@ jobs:
 
     steps:
       - name: Get the cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         id: cache
         with:
           path: ~/.julia
@@ -71,18 +71,18 @@ jobs:
           julia -e 'import Pkg;Pkg.add("CrystalInfoFramework");Pkg.add("Lerche");Pkg.add("FilePaths");Pkg.add("ArgParse")'
 
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           path: main
 
       - name: Checkout julia tools
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           repository: jamesrhester/julia_cif_tools
           path: julia_cif_tools
 
       - name: Checkout the coreCIF dictionary
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           repository: COMCIFS/cif_core
           path: cif_core
