@@ -10,7 +10,7 @@ data_MULTIBLOCK_DIC
     _dictionary.title             MULTIBLOCK_DIC
     _dictionary.class             Instance
     _dictionary.version           1.1.0
-    _dictionary.date              2025-07-07
+    _dictionary.date              2025-11-28
     _dictionary.uri
 ;\
 https://raw.githubusercontent.com/COMCIFS/MultiBlock_Dictionary/main/\
@@ -1419,7 +1419,7 @@ save_
 ;
        All multi-block items from core 3.2.0 added.
 ;
-         1.1.0                    2025-07-07
+         1.1.0                    2025-11-28
 ;
        # Update date above and add audit comments below. Remove
        this comment when ready for release.
