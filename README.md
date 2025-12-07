@@ -1,3 +1,5 @@
+[![CIF dictionary check](https://github.com/COMCIFS/MultiBlock_Dictionary/actions/workflows/main.yml/badge.svg)](https://github.com/COMCIFS/MultiBlock_Dictionary/actions)
+
 # MultiBlock_Dictionary
 
 Definitions describing data stored in multiple containers
