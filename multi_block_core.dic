@@ -5,9 +5,9 @@
 #                                                                        #
 ##########################################################################
 
-data_MULTIBLOCK_DIC
+data_CIF_MULTI
 
-    _dictionary.title             MULTIBLOCK_DIC
+    _dictionary.title             CIF_MULTI
     _dictionary.class             Instance
     _dictionary.version           1.1.0
     _dictionary.date              2025-11-28
@@ -38,19 +38,19 @@ multi_block_core.dic
     any linked and child data names.
 ;
 
-save_MULTIBLOCK_CORE
+save_CIF_MULTI_HEAD
 
-    _definition.id                MULTIBLOCK_CORE
+    _definition.id                CIF_MULTI_HEAD
     _definition.scope             Category
     _definition.class             Head
-    _definition.update            2024-05-15
+    _definition.update            2025-08-14
     _description.text
 ;
-    The MULTIBLOCK_CORE category becomes the overarching category
+    The CIF_MULTI_HEAD category becomes the overarching category
     for all core data names used in one or more data units.
 ;
-    _name.category_id             MULTIBLOCK_DIC
-    _name.object_id               MULTIBLOCK_CORE
+    _name.category_id             CIF_MULTI
+    _name.object_id               CIF_MULTI_HEAD
 
     _import.get
         [
@@ -858,7 +858,7 @@ save_MODEL
     described principally in terms of the geometry of the 'connected'
     atom sites and the crystal symmetry in which they reside.
 ;
-    _name.category_id             MULTIBLOCK_CORE
+    _name.category_id             CIF_MULTI_HEAD
     _name.object_id               MODEL
     _category_key.name            '_model.id'
 
@@ -1213,7 +1213,7 @@ save_STRUCTURE
 ;
     A category for collecting information about a crystallographic structure.
 ;
-    _name.category_id             MULTIBLOCK_CORE
+    _name.category_id             CIF_MULTI_HEAD
     _name.object_id               STRUCTURE
     _category_key.name            '_structure.id'
 
@@ -1454,5 +1454,7 @@ save_
 
        Add DIFFRN_RADIATION category with _diffrn_radiation.id as key. Included
         _diffrn_radiation.diffrn_id to maintain compatibility with imgCIF.
-;
 
+       Renamed dictionary to CIF_MULTI and adjusted the head category name
+       accordingly.
+;
