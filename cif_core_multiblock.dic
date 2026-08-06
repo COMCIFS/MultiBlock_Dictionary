@@ -11,7 +11,7 @@ data_CIF_CORE_MULTIBLOCK
     _dictionary.title             CIF_CORE_MULTIBLOCK
     _dictionary.class             Instance
     _dictionary.version           1.1.1-dev
-    _dictionary.date              2026-07-08
+    _dictionary.date              2026-08-05
     _dictionary.uri
 ;\
 https://raw.githubusercontent.com/COMCIFS/cif_core_multiblock/main/\
@@ -166,7 +166,8 @@ save_
 save_diffrn.crystal_id
 
     _definition.id                '_diffrn.crystal_id'
-    _definition.update            2022-05-09
+    _alias.definition_id          '_diffrn_refln_crystal_id'
+    _definition.update            2026-08-05
     _description.text
 ;
     Identifier for the crystal from which diffraction data were
@@ -1523,10 +1524,12 @@ save_
        Renamed dictionary to CIF_CORE_MULTIBLOCK and adjusted the head
        category name accordingly.
 ;
-         1.1.1-dev                2026-07-08
+         1.1.1-dev                2026-08-05
 ;
        # Add update summary below and change date above until ready for
        # release.
 
        Altered *.structure_id save frames to use imported saveframe.
+
+       Added alias for _diffrn.crystal_id as per mmCIF.
 ;
